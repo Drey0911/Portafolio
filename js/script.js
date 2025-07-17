@@ -222,3 +222,69 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const techTags = document.querySelectorAll('.tech-tag');
+    let activeTooltip = null;
+    
+    // Función para mostrar un tooltip
+    function showTooltip(tooltip) {
+        // Ocultar todos los tooltips primero
+        hideAllTooltips();
+        
+        // Mostrar el tooltip actual
+        tooltip.style.opacity = '1';
+        tooltip.style.transform = 'translateX(-50%) translateY(-5px)';
+        activeTooltip = tooltip;
+    }
+    
+    // Función para ocultar todos los tooltips
+    function hideAllTooltips() {
+        document.querySelectorAll('.tech-info').forEach(info => {
+            info.style.opacity = '0';
+            info.style.transform = 'translateX(-50%)';
+        });
+        activeTooltip = null;
+    }
+    
+    // Función para manejar el clic en un tech-tag
+    function handleTagClick(tag) {
+        const tooltip = tag.querySelector('.tech-info');
+        
+        // Si el tooltip ya está activo, lo ocultamos
+        if (activeTooltip === tooltip) {
+            hideAllTooltips();
+            return;
+        }
+        
+        // Mostramos el nuevo tooltip
+        showTooltip(tooltip);
+    }
+    
+    techTags.forEach(tag => {
+        // Eventos para desktop (hover)
+        tag.addEventListener('mouseenter', function() {
+            if (window.innerWidth > 768) { // Solo para pantallas grandes
+                showTooltip(this.querySelector('.tech-info'));
+            }
+        });
+        
+        tag.addEventListener('mouseleave', function() {
+            if (window.innerWidth > 768) { // Solo para pantallas grandes
+                hideAllTooltips();
+            }
+        });
+        
+        // Evento para móvil (click)
+        tag.addEventListener('click', function(e) {
+            // Prevenimos que el evento se propague al document.click
+            e.stopPropagation();
+            handleTagClick(this);
+        });
+    });
+    
+    // Cerrar tooltips al hacer click en cualquier parte (excepto en los tags)
+    document.addEventListener('click', function() {
+        hideAllTooltips();
+    });
+});
