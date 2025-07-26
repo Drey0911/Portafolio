@@ -1139,6 +1139,7 @@ section {
     pointer-events: none;
     transition: all 0.3s ease;
     z-index: 10;
+    color: var(--text-color);
 }
 
 .tech-tag:hover .tech-info {
