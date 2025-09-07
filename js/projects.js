@@ -79,7 +79,7 @@ const projectsData = {
             "Interfaz amigable",
             "Sistema de Datatables para todo el inventario",
         ],
-        technologies: "Para este proyecto se utilizó PHP para el desarrollo del backendo, para el Frontend se utilizó HTML, CSS de la mano de su framewrok TailwindCSS, JavaScript para mejorar la experiencia del usuario, ademas de una base de datos MySQL para el almacenamiento de datos.",
+        technologies: "Para este proyecto se utilizó PHP para el desarrollo del backend, para el Frontend se utilizó HTML, CSS de la mano de su framewrok TailwindCSS, JavaScript para mejorar la experiencia del usuario, ademas de una base de datos MySQL para el almacenamiento de datos.",
         repoLink: "https://github.com/Drey0911/Inventario-Y-Gestion-De-Productos",
         mockupLink: "img/projects/project5/mockup.png",
           images: ["project5/project5-1.png", "project5/project5-2.png","project5/project5-3.png","project5/project5-4.png","project5/project5-5.png","project5/project5-6.png","project5/project5-7.png"]
