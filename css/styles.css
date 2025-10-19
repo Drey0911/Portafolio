@@ -1148,6 +1148,7 @@ section {
 .tech-tag[data-tech="figma"]:hover { background: #e26c57; color: #FAFAFA; }
 .tech-tag[data-tech="git"]:hover { background: #383a3c; color: #FAFAFA; }
 .tech-tag[data-tech="n8n"]:hover { background: #dc2764; color: #FAFAFA; }
+.tech-tag[data-tech="restapi"]:hover { background: #38BDF8; color: #FAFAFA; }
 .tech-tag[data-tech="laravel"]:hover { background: #e93208; color: #FAFAFA; }
 
 .tech-info {
