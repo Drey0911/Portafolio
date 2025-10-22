@@ -15,23 +15,25 @@ const projectsData = {
         ],
         technologies: "Proyecto enfocado al desarrollo con SpringBoot y conexion a una base de datos PostgreSQL, utilizando Thymeleaf, HTML y CSS para la parte visual, JavaScript para mejorar la experiencia del usuario, contiene H2 console para pruebas y una conexion a Neon Database.",
         repoLink: "https://github.com/Drey0911/APP-SpringMotors-Concesionario",
+        repoLink2: "",
         mockupLink: "img/projects/project1/mockup.png",
         images: ["project1/project1-1.png", "project1/project1-2.jpg","project1/project1-3.jpg","project1/project1-4.png","project1/project1-5.png","project1/project1-6.png","project1/project1-7.png"]
     },
 
     2: {
-        title: "Sistema de Gestión para trabajos de grado UTS",
-        description: "Sistema completo para la gestion de los trabajos de grado (Anteproyectos) de las Unidades Tecnologicas de Santander, manejando roles unicos estrictos definidos por las UTS, estudiante, evaluador, director, coordinador y administrador.",
+        title: "MediFast App para dispensación digital de insumos médicos",
+        description: "Aplicacion movil Fullstack desarrollada para la agenda de recolecciones de medicamentos e insumos medicos, con un sistema de recordatorios automaticos via WhatsApp y un dashboard administrativo web para la gestion completa del dispensario medico, este proyecto fue creado, desarrollado y documentado para mi proyecto de grado Tecnológico.",
         features: [
-            "Gestión de estudiantes y anteproyectos de grado",
-            "Seguimiento de proyectos de cada estudiante y su avance",
-            "Subida de documentos y archivos oficiales",
-            "Panel de control y gestion para cada rol",
+            "Webcoskets para actualizacion en tiempo real",
+            "Jobs programados para el envio automatico de recordatorios",
+            "Servicio de mensajeria con WhatsApp Business API",
+            "Dashboard administrativo web",
+            "Gestion de medicamentos, sedes, usuarios, recolecciones, historiales y favoritos",
             "Interfaz amigable y responsiva",
-            "Calificacion y seguimiento de proyectos",
         ],
-        technologies: "Para este proyecto se utilizó Java Server Pages junto a la libreria JSTL, para la parte visual se utilizó HTML, CSS usando el framwork Boostrap para mayor comodidad y JavaScript para mejorar la experiencia del usuario, ademas de una base de datos MySQL para el almacenamiento de datos.",
-        repoLink: "https://github.com/Drey0911/S.I-Gestion-De-Trabajos-De-Grado-UTS",
+        technologies: "Para este proyecto se utilizó Python con Flask para el desarrollo backend (Rutas, modelos y servicios), acompañado de librerias utiles para Websockets, Schedulers y jobs, Autenticación JWT, plantillas JINJA2 para el dashboard administrativo con un frontend en react native para el desarrollo movil siguiendo la arquitectura MVP (Modelo-vista-presentador), ademas de una base de datos relacional en MySQL, consumo y desarrollo de API REST y conexion con WhatsApp Business API para el envio de notificaciones y recordatorios automáticos.",
+        repoLink: "https://github.com/Drey0911/TG-MediFast-Dispensario-BACKEND",
+        repoLink2: "https://github.com/Drey0911/TG-MediFast-Dispensario-FRONTEND",
         mockupLink: "img/projects/project2/mockup.png",
          images: ["project2/project2-1.png", "project2/project2-2.png","project2/project2-3.png","project2/project2-4.png","project2/project2-5.png","project2/project2-6.png","project2/project2-7.png"]
     },
@@ -47,6 +49,7 @@ const projectsData = {
         ],
         technologies: "Tecnologías utilizadas: HTML, CSS, JavaScript, SpringBoot, Java",
         repoLink: "https://github.com/Drey0911/APP-Football-Pro",
+        repoLink2: "",
         mockupLink: "img/projects/project3/mockup.png",
         images: ["project3/project3-1.png", "project3/project3-2.png","project3/project3-3.png","project3/project3-4.png","project3/project3-5.png","project3/project3-6.png","project3/project3-7.png"]
     },
@@ -64,6 +67,7 @@ const projectsData = {
         ],
         technologies: "Para este proyecto se utilizó el framework Flutter para desarrollo movil junto a sus diversas configuraciones unicas tanto para iOS como Android, cuenta con una conexion a Firebase haciendo uso del Storage para el almacenamiento de imagenes y el authentication para el registro y autenticacion de usuarios, ademas de una base de datos en tiempo real para el almacenamiento de datos.",
         repoLink: "https://github.com/Drey0911/APP-Smart-Pets-Veterinaria",
+        repoLink2: "",
         mockupLink: "img/projects/project4/mockup.jpg",
          images: ["project4/project4-1.png", "project4/project4-2.png","project4/project4-3.png","project4/project4-4.png","project4/project4-5.png","project4/project4-6.png","project4/project4-7.png"]
     },
@@ -81,6 +85,7 @@ const projectsData = {
         ],
         technologies: "Para este proyecto se utilizó PHP para el desarrollo del backend, para el Frontend se utilizó HTML, CSS de la mano de su framewrok TailwindCSS, JavaScript para mejorar la experiencia del usuario, ademas de una base de datos MySQL para el almacenamiento de datos.",
         repoLink: "https://github.com/Drey0911/Inventario-Y-Gestion-De-Productos",
+        repoLink2: "",
         mockupLink: "img/projects/project5/mockup.png",
           images: ["project5/project5-1.png", "project5/project5-2.png","project5/project5-3.png","project5/project5-4.png","project5/project5-5.png","project5/project5-6.png","project5/project5-7.png"]
     }
@@ -137,7 +142,19 @@ function initProjects() {
                 });
                 
                 document.querySelector('.modal-description p:last-of-type').textContent = project.technologies;
-                document.querySelector('.btn-repository').setAttribute('href', project.repoLink);
+                
+                // Actualizar botones de repositorios
+                const repoPrimary = document.querySelector('.btn-repository');
+                const repoSecondary = document.querySelector('.btn-repository-secondary');
+                
+                repoPrimary.setAttribute('href', project.repoLink);
+                
+                if (project.repoLink2 && project.repoLink2.trim() !== '') {
+                    repoSecondary.setAttribute('href', project.repoLink2);
+                    repoSecondary.style.display = 'inline-block';
+                } else {
+                    repoSecondary.style.display = 'none';
+                }
                 
                 if (project.mockupLink) {
                     btnMockup.setAttribute('href', project.mockupLink);
@@ -191,8 +208,17 @@ function initProjects() {
         }
     });
     
-    // Manejar clic en el botón de mockup
+    // Manejar clic en los botones
     btnMockup.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+    
+    // Prevenir propagación en botones de repositorio
+    document.querySelector('.repo-primary').addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+    
+    document.querySelector('.repo-secondary').addEventListener('click', (e) => {
         e.stopPropagation();
     });
 }

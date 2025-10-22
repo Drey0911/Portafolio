@@ -191,6 +191,25 @@ section {
     transform: translateY(-2px);
 }
 
+.btn-repository-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: var(--transition);
+}
+
+.btn-repository-secondary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
 /* Boton de enviar mensaje (Contacto) */
 
 .btn-submit {
@@ -1331,107 +1350,9 @@ section {
 .tech-firebase  { background: rgba(255,167,36,0.1);  color: var(--tech-firebase-text); }
 .tech-mysql     { background: rgba(0,117,143,0.1);   color: #00758f; }
 .tech-postgresql{ background: rgba(56,63,186,0.1);   color: #4466b5; }
-
-
-   /* ====================================================================================================================================================
-     ST - CONTACTO - SECCION
-   ==================================================================================================================================================== */
-
-.contact-section {
-     padding: 1px 0 40px;
-}
-
-.contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    background-color: var(--card-bg);
-    border-radius: 15px;
-    padding: 50px;
-    box-shadow: var(--shadow);
-}
-
-.contact-info h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-    color: var(--primary-color);
-}
-
-.contact-details {
-    margin-top: 30px;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.contact-item i {
-    width: 40px;
-    height: 40px;
-    background-color: rgba(59, 130, 246, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary-color);
-    font-size: 1.2rem;
-}
-
-.contact-social {
-    display: flex;
-    gap: 15px;
-    margin-top: 30px;
-}
-
-.social-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(59, 130, 246, 0.1);
-    border-radius: 50%;
-    color: var(--primary-color);
-    font-size: 1.2rem;
-    transition: var(--transition);
-}
-
-.social-link:hover {
-    background-color: var(--primary-color);
-    color: white;
-    transform: translateY(-3px);
-}
-
-.contact-form .form-group {
-    margin-bottom: 20px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: inherit;
-    transition: var(--transition);
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
-}
-
-.contact-form textarea {
-    resize: vertical;
-    min-height: 120px;
-}
+.tech-python   { background: rgba(53,114,165,0.1);   color: #3776ab; }
+.tech-reactnative { background: rgba(99, 221, 255, 0.1);  color: #1c99ff; }
+.tech-flask    { background: rgba(53,114,165,0.1);   color: #3776ab; }
 
    /* ====================================================================================================================================================
      ST - FOOTER 
@@ -2597,3 +2518,140 @@ section {
     scrollbar-color: rgba(59, 130, 246, 0.5) transparent;
 }
 
+/* ====================================================================================================================================================
+   ST - SECCIÓN DE CONTACTO CON WHATSAPP
+   ==================================================================================================================================================== */
+
+.contact-section {
+    padding: 1px 0 40px;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 100px;
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    padding: 50px;
+    box-shadow: var(--shadow);
+    margin-left: 150px;
+    margin-right: 150px;
+    align-items: start; 
+}
+
+.contact-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.contact-details {
+    margin-top: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.contact-item i {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(59, 130, 246, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.contact-item:nth-child(1) i {
+    background-color: rgba(37, 211, 102, 0.1);
+    color: #25D366;
+}
+
+.whatsapp-options h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.whatsapp-options p {
+    color: var(--text-light);
+    margin-bottom: 25px;
+}
+
+.whatsapp-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: auto;
+}
+
+.whatsapp-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    width: 320px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    background: linear-gradient(135deg, #128C7E, #25D366);
+}
+
+.whatsapp-btn:active {
+    transform: translateY(1px);
+}
+
+.whatsapp-btn i {
+    font-size: 1.5rem;
+}
+
+.whatsapp-btn.custom-message {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.whatsapp-btn.custom-message:hover {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+/* Responsive */
+.contact-info, .whatsapp-options {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+@media (max-width: 992px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-container {
+        padding: 30px;
+    }
+    
+    .whatsapp-btn {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+}

@@ -758,14 +758,12 @@
                         <img src="img/projects/project2/project2.png" alt="Proyecto 2">
                     </div>
                     <div class="project-content">
-                        <h3>Sistema de Gestión para trabajos de grado UTS</h3>
-                        <p>Sistema completo para la gestion de los trabajos de grado de las Unidades Tecnologicas de Santander.</p>
+                        <h3>MediFast App para dispensación digital de insumos médicos</h3>
+                        <p>Aplicacion movil Fullstack desarrollada para la agenda de recolecciones de un dispensario de insumos médicos, contando con un Dashboard WEB Administrativo.</p>
                         <div class="project-tech">
-                            <span class="tech-java">Java</span>
-                            <span class="tech-html">HTML</span>
-                            <span class="tech-js">JavaScript</span>
-                            <span class="tech-css">CSS</span>
-                            <span class="tech-bootstrap">Bootstrap</span>
+                            <span class="tech-python">Python</span>
+                            <span class="tech-flask">Flask</span>
+                            <span class="tech-reactnative">React Native</span>
                             <span class="tech-mysql">MySQL</span>
                         </div>
                         <button class="btn-view-more" data-project="2">Ver más</button>
@@ -851,64 +849,79 @@
                     <h3>Caracteristicas</h3>
                     <ul>
                         <li></li>
-                    </ul>
+                    </ul>        
                     <h3>Tecnologias</h3>
                     <p></p>
                     <div class="modal-project-buttons">
-                    <a href="" class="btn-repository" target="_blank">
-                        <i class="fab fa-github"></i> Ver repositorio
-                    </a>
-                   <a href="" class="btn-repository btn-mockup" target="_blank">
-                        <i class="fas fa-image"></i> Ver Mockup
-                    </a>
+                        <a href="" class="btn-repository" target="_blank">
+                            <i class="fab fa-github"></i> Repositorio
+                        </a>
+                        <a href="" class="btn-repository btn-repository-secondary" target="_blank" style="display: none;">
+                            <i class="fab fa-github"></i> Repositorio Frontend
+                        </a>
+                        <a href="" class="btn-repository btn-mockup" target="_blank">
+                            <i class="fas fa-image"></i> Ver Mockup
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+<!-- Contact -->
+<section id="contact" class="contact-section">
     <div class="section-divider"></div>
-    <!-- Contact -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2 class="section-title">Contacto</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>¡Hablemos!</h3>
-                    <p>Si tienes un proyecto en mente o quieres contactarme, no dudes en enviarme un mensaje.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>andrey0911a@gmail.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-github"></i>
-                            <span>Drey0911</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-linkedin"></i>
-                            <span>Drey</span>
-                        </div>
+    
+    <div class="container">
+        <h2 class="section-title">Contáctame</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>¡Hablemos!</h3>
+                <p>Si tienes un proyecto en mente o quieres contactarme, envíame un mensaje directo por WhatsApp.</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>+57 322 251 4185</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>andrey0911a@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Girón, Santander</span>
                     </div>
                 </div>
-                <form id="contact-form" class="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" required placeholder="Nombre completo">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" required placeholder="Correo electrónico">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="subject" name="subject" required placeholder="Asunto">
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" rows="5" required placeholder="Mensaje"></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit">Enviar mensaje</button>
-                </form>
+            </div>
+            
+            <div class="whatsapp-options">
+                <h3>Enviar mensaje rápido</h3>
+                <p>Seleccion de tipo de mensaje:</p>
+                
+                <div class="whatsapp-buttons">
+                    <button class="whatsapp-btn" data-message="¡Hola Andrey! Me interesa conocer más sobre tus servicios de desarrollo.">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Consulta de servicios</span>
+                    </button>
+                    
+                    <button class="whatsapp-btn" data-message="¡Hola Andrey! Me gustaría hablar sobre una oportunidad de colaboración.">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Colaboración</span>
+                    </button>
+                    
+                    <button class="whatsapp-btn" data-message="¡Hola Andrey! Vi tu portafolio y me gustaría conocer más sobre tu experiencia.">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Más información</span>
+                    </button>
+                    
+                    <button class="whatsapp-btn custom-message">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Mensaje personalizado</span>
+                    </button>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 <div class="section-divider"></div>
 

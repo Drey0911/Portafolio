@@ -288,3 +288,31 @@ document.addEventListener('DOMContentLoaded', function() {
         hideAllTooltips();
     });
 });
+
+// WhatsApp functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const whatsappButtons = document.querySelectorAll('.whatsapp-btn');
+    const phoneNumber = '573222514185'; 
+    
+    whatsappButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            let message = '';
+            
+            if (this.classList.contains('custom-message')) {
+                message = prompt('Escribe tu mensaje personalizado:');
+                if (!message) return; // Si el usuario cancela, no hacer nada
+            } else {
+                message = this.getAttribute('data-message');
+            }
+            
+            // Codificar el mensaje para URL
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Crear el enlace de WhatsApp
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            
+            // Abrir en una nueva pestaña
+            window.open(whatsappUrl, '_blank');
+        });
+    });
+});
