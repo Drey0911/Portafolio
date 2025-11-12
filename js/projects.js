@@ -30,6 +30,7 @@ const projectsData = {
             "Dashboard administrativo web",
             "Gestion de medicamentos, sedes, usuarios, recolecciones, historiales y favoritos",
             "Interfaz amigable y responsiva",
+            "ChatBOT Basico para disponibilidad, medicamentos y ayuda al usuario (Prototipo)"
         ],
         technologies: "Para este proyecto se utilizó Python con Flask para el desarrollo backend (Rutas, modelos y servicios), acompañado de librerias utiles para Websockets, Schedulers y jobs, Autenticación JWT, plantillas JINJA2 para el dashboard administrativo con un frontend en react native para el desarrollo movil siguiendo la arquitectura MVP (Modelo-vista-presentador), ademas de una base de datos relacional en MySQL, consumo y desarrollo de API REST y conexion con WhatsApp Business API para el envio de notificaciones y recordatorios automáticos.",
         repoLink: "https://github.com/Drey0911/TG-MediFast-Dispensario-BACKEND",
