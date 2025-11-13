@@ -74,12 +74,19 @@ body {
     transition: var(--transition);
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 .container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    box-sizing: border-box;
 }
+
 
 /* ====================================================================================================================================================
     ST - SECCIONES GENERALES
@@ -1143,6 +1150,8 @@ section {
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: 600;
+    z-index: 5;
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* Colores para cada tecnología en las tarjetas */
@@ -1205,6 +1214,7 @@ section {
 
 .card-footer {
     margin-top: auto;
+    margin-bottom: auto;
     padding-top: 15px;
     text-align: center;
     border-top: 1px solid var(--bg-secondary);
@@ -1254,12 +1264,27 @@ section {
         font-size: 22px;
     }
     
-    .tech-tag {
-        -webkit-tap-highlight-color: transparent;
+    .tech-tag.active .tech-info {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-5px);
+        pointer-events: auto;
     }
     
-    .tech-info {
-        pointer-events: auto; /* Permite interacción en móviles */
+    /* Cerrar tooltip al tocar fuera */
+    .tech-tags-container {
+        position: relative;
+    }
+
+    .main-content {
+        flex: 1;
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: calc(100% - 10px);
+    }
+    
+    .card-footer {
+        flex-shrink: 0;
+        margin-top: auto;
     }
 }
 
@@ -2519,7 +2544,7 @@ section {
 }
 
 /* ====================================================================================================================================================
-   ST - SECCIÓN DE CONTACTO CON WHATSAPP
+   ST - SECCIÓN DE CONTACTO CON WHATSAPP - CORREGIDA
    ==================================================================================================================================================== */
 
 .contact-section {
@@ -2529,19 +2554,19 @@ section {
 .contact-container {
     display: grid;
     grid-template-columns: 1fr 1fr; 
-    gap: 100px;
+    gap: 60px; /* Reducido de 100px */
     background-color: var(--card-bg);
     border-radius: 15px;
-    padding: 50px;
+    padding: 40px; /* Reducido de 50px */
     box-shadow: var(--shadow);
-    margin-left: 150px;
-    margin-right: 150px;
+    max-width: 1200px; /* Agregado */
+    margin: 0 auto; /* Cambiado - centrado */
     align-items: start; 
 }
 
 .contact-info h3 {
     font-size: 1.8rem;
-    margin-bottom: 10px;
+    margin-bottom: 15px; /* Aumentado de 10px */
     color: var(--primary-color);
 }
 
@@ -2581,14 +2606,14 @@ section {
 
 .whatsapp-options p {
     color: var(--text-light);
-    margin-bottom: 25px;
+    margin-bottom: 20px; /* Reducido de 25px para eliminar espacio extra */
 }
 
 .whatsapp-buttons {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin-top: auto;
+    gap: 12px;
+    margin-top: 0; /* Cambiado de auto para eliminar espacio extra */
 }
 
 .whatsapp-btn {
@@ -2604,8 +2629,10 @@ section {
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: left;
-    width: 320px;
+    width: 100%;
+    max-width: 320px; 
     box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    box-sizing: border-box; 
 }
 
 .whatsapp-btn:hover {
@@ -2636,22 +2663,66 @@ section {
 .contact-info, .whatsapp-options {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: auto; /* Cambiado de 100% */
 }
+
+@media (max-width: 1200px) {
+    .contact-container {
+        max-width: 90%; /* Cambiado de márgenes fijos */
+        margin: 0 auto;
+        gap: 50px;
+    }
+}
+
 @media (max-width: 992px) {
     .contact-container {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 40px;
+        max-width: 95%;
+        margin: 0 auto;
+        padding: 35px 30px;
+    }
+    
+    .whatsapp-buttons {
+        align-items: stretch; /* Cambiado de center */
+    }
+    
+    .whatsapp-btn {
+        max-width: 100%; /* Ocupa todo el ancho disponible */
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 30px 25px;
+        gap: 35px;
+        max-width: 95%;
+        margin: 0 auto;
+    }
+    
+    .whatsapp-btn {
+        max-width: 100%; 
     }
 }
 
 @media (max-width: 576px) {
     .contact-container {
-        padding: 30px;
+        padding: 25px 20px;
+        max-width: 95%;
+        margin: 0 auto;
+        gap: 30px;
     }
     
     .whatsapp-btn {
         padding: 12px 15px;
         font-size: 0.9rem;
+    }
+    
+    .contact-info h3 {
+        font-size: 1.5rem;
+    }
+    
+    .whatsapp-options h3 {
+        font-size: 1.3rem;
     }
 }
