@@ -2703,6 +2703,28 @@ section {
     .whatsapp-btn {
         max-width: 100%; 
     }
+
+    .tech-info {
+        opacity: 0 !important;
+        pointer-events: none !important;
+        transform: translateX(-50%) !important;
+    }
+
+    .floating-tech-info {
+        position: fixed;
+        z-index: 9999;
+        max-width: 90%;
+        width: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--bg-secondary);
+        color: var(--text-color);
+        padding: 12px;
+        border-radius: 10px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+        transition: opacity 0.18s ease, transform 0.18s ease, top 0.18s ease;
+        pointer-events: auto;
+    }
 }
 
 @media (max-width: 576px) {

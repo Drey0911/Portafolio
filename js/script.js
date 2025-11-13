@@ -225,69 +225,131 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     const techTags = document.querySelectorAll('.tech-tag');
-    let activeTooltip = null;
-    
-    // Función para mostrar un tooltip
-    function showTooltip(tooltip) {
-        // Ocultar todos los tooltips primero
-        hideAllTooltips();
-        
-        // Mostrar el tooltip actual
-        tooltip.style.opacity = '1';
-        tooltip.style.transform = 'translateX(-50%) translateY(-5px)';
-        activeTooltip = tooltip;
-    }
-    
-    // Función para ocultar todos los tooltips
+    let activeTooltip = null; // referencia al tooltip interno
+    let floatingTooltip = null; // elemento flotante en body (móvil)
+
+    // Oculta todos los tooltips internos
     function hideAllTooltips() {
         document.querySelectorAll('.tech-info').forEach(info => {
             info.style.opacity = '0';
             info.style.transform = 'translateX(-50%)';
+            info.style.pointerEvents = 'none';
         });
+        if (floatingTooltip) {
+            floatingTooltip.remove();
+            floatingTooltip = null;
+        }
         activeTooltip = null;
     }
-    
-    // Función para manejar el clic en un tech-tag
-    function handleTagClick(tag) {
-        const tooltip = tag.querySelector('.tech-info');
-        
-        // Si el tooltip ya está activo, lo ocultamos
-        if (activeTooltip === tooltip) {
-            hideAllTooltips();
-            return;
-        }
-        
-        // Mostramos el nuevo tooltip
-        showTooltip(tooltip);
+
+    // Muestra tooltip "inline" (desktop)
+    function showInlineTooltip(tooltip) {
+        hideAllTooltips();
+        tooltip.style.opacity = '1';
+        tooltip.style.transform = 'translateX(-50%) translateY(-5px)';
+        tooltip.style.pointerEvents = 'auto';
+        activeTooltip = tooltip;
     }
-    
+
+    // Crea o muestra un tooltip flotante en body (móvil)
+    function showFloatingTooltip(tag) {
+        hideAllTooltips();
+        const source = tag.querySelector('.tech-info');
+        if (!source) return;
+
+        // crear contenedor flotante
+        floatingTooltip = document.createElement('div');
+        floatingTooltip.className = 'floating-tech-info';
+        floatingTooltip.innerHTML = source.innerHTML;
+        document.body.appendChild(floatingTooltip);
+
+        // estilo base (se puede refinar con CSS)
+        Object.assign(floatingTooltip.style, {
+            position: 'fixed',
+            zIndex: 9999,
+            maxWidth: '90%',
+            width: 'auto',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            opacity: '0',
+            background: getComputedStyle(document.documentElement).getPropertyValue('--bg-secondary') || '#111',
+            color: getComputedStyle(document.documentElement).getPropertyValue('--text-color') || '#fff',
+            padding: '12px',
+            borderRadius: '10px',
+            boxShadow: '0 8px 30px rgba(0,0,0,0.3)',
+            transition: 'opacity 0.18s ease, transform 0.18s ease',
+            pointerEvents: 'auto'
+        });
+
+        // posicionar cerca de la etiqueta (preferencia arriba si cabe)
+        const rect = tag.getBoundingClientRect();
+        // temporalmente visible para medir
+        floatingTooltip.style.opacity = '0';
+        floatingTooltip.style.top = '0px';
+        floatingTooltip.style.bottom = 'auto';
+
+        // medir y colocar
+        requestAnimationFrame(() => {
+            const ttRect = floatingTooltip.getBoundingClientRect();
+            let top = rect.top - ttRect.height - 8; // encima por defecto
+            if (top < 8) { // si no cabe arriba, colocarlo debajo de la etiqueta
+                top = rect.bottom + 8;
+            }
+            // límite inferior
+            if (top + ttRect.height > window.innerHeight - 8) {
+                top = window.innerHeight - ttRect.height - 8;
+            }
+            floatingTooltip.style.left = Math.min(Math.max(rect.left + rect.width / 2 - ttRect.width / 2, 8), window.innerWidth - ttRect.width - 8) + 'px';
+            floatingTooltip.style.top = top + 'px';
+            floatingTooltip.style.transform = 'translateX(0)'; // ya ajustamos left directamente
+            floatingTooltip.style.opacity = '1';
+        });
+    }
+
     techTags.forEach(tag => {
-        // Eventos para desktop (hover)
+        // Hover en desktop
         tag.addEventListener('mouseenter', function() {
-            if (window.innerWidth > 768) { // Solo para pantallas grandes
-                showTooltip(this.querySelector('.tech-info'));
+            if (window.innerWidth > 768) {
+                const info = this.querySelector('.tech-info');
+                if (info) showInlineTooltip(info);
             }
         });
-        
         tag.addEventListener('mouseleave', function() {
-            if (window.innerWidth > 768) { // Solo para pantallas grandes
+            if (window.innerWidth > 768) {
                 hideAllTooltips();
             }
         });
-        
-        // Evento para móvil (click)
+
+        // Click (móvil -> flotante, desktop -> inline toggle)
         tag.addEventListener('click', function(e) {
-            // Prevenimos que el evento se propague al document.click
             e.stopPropagation();
-            handleTagClick(this);
+            if (window.innerWidth <= 768) {
+                // togglear: si ya hay floating y el contenido es el mismo, cerrar
+                if (floatingTooltip) {
+                    floatingTooltip.remove();
+                    floatingTooltip = null;
+                    return;
+                }
+                showFloatingTooltip(this);
+            } else {
+                const info = this.querySelector('.tech-info');
+                if (!info) return;
+                if (activeTooltip === info) {
+                    hideAllTooltips();
+                } else {
+                    showInlineTooltip(info);
+                }
+            }
         });
     });
-    
-    // Cerrar tooltips al hacer click en cualquier parte (excepto en los tags)
-    document.addEventListener('click', function() {
+
+    // Cerrar tooltips al hacer click en cualquier parte (excepto en los tags / floating)
+    document.addEventListener('click', function(e) {
+        // si clic dentro del floatingTooltip, no cerrar
+        if (floatingTooltip && (floatingTooltip === e.target || floatingTooltip.contains(e.target))) return;
         hideAllTooltips();
     });
-});
+ });
 
 // WhatsApp functionality
 document.addEventListener('DOMContentLoaded', function() {
