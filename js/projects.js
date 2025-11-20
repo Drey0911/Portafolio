@@ -3,6 +3,7 @@ const projectsData = {
 
     1: {
         title: "SpringMotors - Pagina Web de Concesionario",
+        type: "basic",
         description: "Plataforma web para la gestion de un concesionario y todo su inventario, tanto vehiculos como repuestos, ademas de ser un inventario agil para el usuario, gestionando proveedores, fabricantes y clientes desde un panel de control exclusivo, manejando ademas un contexto de roles con su panel unico.",
         features: [
             "Registro y administración de Vehiculos y repuestos",
@@ -14,6 +15,14 @@ const projectsData = {
             "Interfaz amigable y responsiva"
         ],
         technologies: "Proyecto enfocado al desarrollo con SpringBoot y conexion a una base de datos PostgreSQL, utilizando Thymeleaf, HTML y CSS para la parte visual, JavaScript para mejorar la experiencia del usuario, contiene H2 console para pruebas y una conexion a Neon Database.",
+        techTags: [
+            { class: "tech-html", name: "HTML" },
+            { class: "tech-css", name: "CSS" },
+            { class: "tech-js", name: "JavaScript" },
+            { class: "tech-spring", name: "SpringBoot" },
+            { class: "tech-java", name: "Java" },
+            { class: "tech-postgresql", name: "PostgreSQL" }
+        ],
         repoLink: "https://github.com/Drey0911/APP-SpringMotors-Concesionario",
         repoLink2: "",
         mockupLink: "img/projects/project1/mockup.png",
@@ -22,6 +31,7 @@ const projectsData = {
 
     2: {
         title: "MediFast App para dispensación digital de insumos médicos",
+        type: "fullstack",
         description: "Aplicacion movil Fullstack desarrollada para la agenda de recolecciones de medicamentos e insumos medicos, con un sistema de recordatorios automaticos via WhatsApp y un dashboard administrativo web para la gestion completa del dispensario medico, este proyecto fue creado, desarrollado y documentado para mi proyecto de grado Tecnológico.",
         features: [
             "Webcoskets para actualizacion en tiempo real",
@@ -33,6 +43,12 @@ const projectsData = {
             "ChatBOT Basico para disponibilidad, medicamentos y ayuda al usuario (Prototipo)"
         ],
         technologies: "Para este proyecto se utilizó Python con Flask para el desarrollo backend (Rutas, modelos y servicios), acompañado de librerias utiles para Websockets, Schedulers y jobs, Autenticación JWT, plantillas JINJA2 para el dashboard administrativo con un frontend en react native para el desarrollo movil siguiendo la arquitectura MVP (Modelo-vista-presentador), ademas de una base de datos relacional en MySQL, consumo y desarrollo de API REST y conexion con WhatsApp Business API para el envio de notificaciones y recordatorios automáticos.",
+        techTags: [
+            { class: "tech-python", name: "Python" },
+            { class: "tech-flask", name: "Flask" },
+            { class: "tech-reactnative", name: "React Native" },
+            { class: "tech-mysql", name: "MySQL" }
+        ],
         repoLink: "https://github.com/Drey0911/TG-MediFast-Dispensario-BACKEND",
         repoLink2: "https://github.com/Drey0911/TG-MediFast-Dispensario-FRONTEND",
         mockupLink: "img/projects/project2/mockup.png",
@@ -41,6 +57,7 @@ const projectsData = {
 
     3: {
         title: "Football PRO - Proyecto de relaciones Spring",
+        type: "basic",
         description: "Este proyecto es para el aprendizaje optimo de las relaciones con SpringBoot enfocado al mundo del futbol y la gestion de un club profesional, desarrollado para comprender mejor las relaciones Spring OneToOne, ManyToOne, ManyToMany, OneToMany.",
         features: [
             "Relaciones entre entidades",
@@ -49,6 +66,13 @@ const projectsData = {
             "Interfaz amigable y responsiva",
         ],
         technologies: "Tecnologías utilizadas: HTML, CSS, JavaScript, SpringBoot, Java",
+        techTags: [
+            { class: "tech-html", name: "HTML" },
+            { class: "tech-css", name: "CSS" },
+            { class: "tech-js", name: "JavaScript" },
+            { class: "tech-spring", name: "SpringBoot" },
+            { class: "tech-java", name: "Java" }
+        ],
         repoLink: "https://github.com/Drey0911/APP-Football-Pro",
         repoLink2: "",
         mockupLink: "img/projects/project3/mockup.png",
@@ -57,6 +81,7 @@ const projectsData = {
 
     4: {
         title: "SmartPets - App de citas veterinarias",
+        type: "basic",
         description: "Aplicación para el control, agenda y gestion de citas veterinarias y mascotas en tiempo real y al alcance de un dispositivo movil iOS o Android.",
         features: [
             "Agendamiento de citas e historial médico",
@@ -67,14 +92,19 @@ const projectsData = {
             "Autenticacion y registro de usuarios",
         ],
         technologies: "Para este proyecto se utilizó el framework Flutter para desarrollo movil junto a sus diversas configuraciones unicas tanto para iOS como Android, cuenta con una conexion a Firebase haciendo uso del Storage para el almacenamiento de imagenes y el authentication para el registro y autenticacion de usuarios, ademas de una base de datos en tiempo real para el almacenamiento de datos.",
+        techTags: [
+            { class: "tech-flutter", name: "Flutter" },
+            { class: "tech-firebase", name: "Firebase" }
+        ],
         repoLink: "https://github.com/Drey0911/APP-Smart-Pets-Veterinaria",
         repoLink2: "",
         mockupLink: "img/projects/project4/mockup.jpg",
          images: ["project4/project4-1.png", "project4/project4-2.png","project4/project4-3.png","project4/project4-4.png","project4/project4-5.png","project4/project4-6.png","project4/project4-7.png"]
     },
 
-        5: {
+    5: {
         title: "INVDrey - Software para la gestión de inventarios",
+        type: "basic",
         description: "Software basico para el control de productos, clientes, compras, ventas y proveedores dentro de un inventario digital, permitiendo la gestión y correcto almacenamiento de datos de cada modulo del inventario.",
         features: [
             "Control y gestión de productos, clientes, proveedores, usuarios y roles",
@@ -85,6 +115,12 @@ const projectsData = {
             "Sistema de Datatables para todo el inventario",
         ],
         technologies: "Para este proyecto se utilizó PHP para el desarrollo del backend, para el Frontend se utilizó HTML, CSS de la mano de su framewrok TailwindCSS, JavaScript para mejorar la experiencia del usuario, ademas de una base de datos MySQL para el almacenamiento de datos.",
+        techTags: [
+            { class: "tech-php", name: "PHP" },
+            { class: "tech-js", name: "JavaScript" },
+            { class: "tech-mysql", name: "MySQL" },
+            { class: "tech-css", name: "TailwindCSS" }
+        ],
         repoLink: "https://github.com/Drey0911/Inventario-Y-Gestion-De-Productos",
         repoLink2: "",
         mockupLink: "img/projects/project5/mockup.png",
@@ -118,81 +154,161 @@ function startCarousel(modalImages) {
 
 // Función para inicializar los proyectos
 function initProjects() {
+    // Cargar proyectos inicialmente (mostrar todos)
+    renderProjects('all');
+    
+    // Agregar event listeners a los botones de filtro
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remover clase active de todos los botones
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Agregar clase active al botón clickeado
+            button.classList.add('active');
+            
+            // Filtrar y renderizar proyectos
+            const filterType = button.getAttribute('data-filter');
+            renderProjects(filterType);
+        });
+    });
+    
+    // Configurar event listeners para los modales
+    setupModalListeners();
+}
+
+// Función para renderizar proyectos según el filtro
+function renderProjects(filterType) {
+    const projectsGrid = document.querySelector('.projects-grid');
+    projectsGrid.innerHTML = '';
+    
+    // Filtrar proyectos
+    let filteredProjects = Object.entries(projectsData);
+    
+    if (filterType !== 'all') {
+        filteredProjects = filteredProjects.filter(([id, project]) => project.type === filterType);
+    }
+    
+    // Crear tarjetas de proyectos
+    filteredProjects.forEach(([id, project]) => {
+        const card = document.createElement('div');
+        card.className = 'project-card';
+        
+        // Obtener la imagen principal del proyecto (project#.png)
+        const imageUrl = `img/projects/project${id}/project${id}.png`;
+        
+        // Crear tags de tecnologías
+        const techTagsHTML = project.techTags.map(tech => {
+            return `<span class="${tech.class}">${tech.name}</span>`;
+        }).join('');
+        
+        card.innerHTML = `
+            <div class="project-image">
+                <img src="${imageUrl}" alt="${project.title}">
+            </div>
+            <div class="project-content">
+                <h3>${project.title}</h3>
+                <p>${project.description.substring(0, 120)}...</p>
+                <div class="project-tech">
+                    ${techTagsHTML}
+                </div>
+                <button class="btn-view-more" data-project="${id}">Ver más</button>
+            </div>
+        `;
+        projectsGrid.appendChild(card);
+    });
+    
+    // Reinicializar event listeners para las tarjetas
+    setupCardListeners();
+}
+
+// Función para configurar event listeners de las tarjetas
+function setupCardListeners() {
     const projectCards = document.querySelectorAll('.project-card');
     const projectModal = document.querySelector('.project-modal');
-    const modalClose = document.querySelector('.modal-close');
-    const modalImages = document.querySelectorAll('.modal-images img');
-    const btnMockup = document.querySelector('.btn-mockup');
     
     projectCards.forEach(card => {
         card.addEventListener('click', (e) => {
             if (e.target.classList.contains('btn-view-more')) {
-                const projectId = e.target.getAttribute('data-project');
-                const project = projectsData[projectId];
-                
-                // Actualizar modal con datos del proyecto
-                document.querySelector('.modal-title').textContent = project.title;
-                document.querySelector('.modal-description h3').nextElementSibling.textContent = project.description;
-                
-                const featuresList = document.querySelector('.modal-description ul');
-                featuresList.innerHTML = '';
-                project.features.forEach(feature => {
-                    const li = document.createElement('li');
-                    li.textContent = feature;
-                    featuresList.appendChild(li);
-                });
-                
-                document.querySelector('.modal-description p:last-of-type').textContent = project.technologies;
-                
-                // Actualizar botones de repositorios
-                const repoPrimary = document.querySelector('.btn-repository');
-                const repoSecondary = document.querySelector('.btn-repository-secondary');
-                
-                repoPrimary.setAttribute('href', project.repoLink);
-                
-                if (project.repoLink2 && project.repoLink2.trim() !== '') {
-                    repoSecondary.setAttribute('href', project.repoLink2);
-                    repoSecondary.style.display = 'inline-block';
-                } else {
-                    repoSecondary.style.display = 'none';
-                }
-                
-                if (project.mockupLink) {
-                    btnMockup.setAttribute('href', project.mockupLink);
-                    btnMockup.style.display = 'inline-block';
-                } else {
-                    btnMockup.style.display = 'none';
-                }
-
-                // Actualizar imágenes
-                modalImages.forEach((img, index) => {
-                    if (project.images[index]) {
-                        img.src = `img/projects/${project.images[index]}`;
-                        img.alt = `${project.title} - Captura ${index + 1}`;
-                        img.style.display = 'block'; // Asegurarse que todas son visibles inicialmente
-                    } else {
-                        img.style.display = 'none'; // Ocultar imágenes sin datos
-                    }
-                });
-                
-                // Resetear el carrusel
-                currentImageIndex = 0;
-                modalImages.forEach(img => img.classList.remove('active'));
-                modalImages[0].classList.add('active');
-                
-                // Iniciar carrusel solo si hay más de una imagen
-                if (project.images.length > 1) {
-                    startCarousel(modalImages);
-                } else {
-                    stopCarousel();
-                }
-                
-                // Mostrar modal
-                projectModal.classList.add('active');
-                document.body.style.overflow = 'hidden';
+                openProjectModal(e.target.getAttribute('data-project'));
             }
         });
     });
+}
+
+// Función para abrir el modal del proyecto
+function openProjectModal(projectId) {
+    const project = projectsData[projectId];
+    const projectModal = document.querySelector('.project-modal');
+    const modalImages = document.querySelectorAll('.modal-images img');
+    
+    // Actualizar modal con datos del proyecto
+    document.querySelector('.modal-title').textContent = project.title;
+    document.querySelector('.modal-description h3').nextElementSibling.textContent = project.description;
+    
+    const featuresList = document.querySelector('.modal-description ul');
+    featuresList.innerHTML = '';
+    project.features.forEach(feature => {
+        const li = document.createElement('li');
+        li.textContent = feature;
+        featuresList.appendChild(li);
+    });
+    
+    document.querySelector('.modal-description p:last-of-type').textContent = project.technologies;
+    
+    // Actualizar botones de repositorios
+    const repoPrimary = document.querySelector('.btn-repository');
+    const repoSecondary = document.querySelector('.btn-repository-secondary');
+    
+    repoPrimary.setAttribute('href', project.repoLink);
+    
+    if (project.repoLink2 && project.repoLink2.trim() !== '') {
+        repoSecondary.setAttribute('href', project.repoLink2);
+        repoSecondary.style.display = 'inline-block';
+    } else {
+        repoSecondary.style.display = 'none';
+    }
+    
+    const btnMockup = document.querySelector('.btn-mockup');
+    if (project.mockupLink) {
+        btnMockup.setAttribute('href', project.mockupLink);
+        btnMockup.style.display = 'inline-block';
+    } else {
+        btnMockup.style.display = 'none';
+    }
+
+    // Actualizar imágenes
+    modalImages.forEach((img, index) => {
+        if (project.images[index]) {
+            img.src = `img/projects/${project.images[index]}`;
+            img.alt = `${project.title} - Captura ${index + 1}`;
+            img.style.display = 'block';
+        } else {
+            img.style.display = 'none';
+        }
+    });
+    
+    // Resetear el carrusel
+    currentImageIndex = 0;
+    modalImages.forEach(img => img.classList.remove('active'));
+    modalImages[0].classList.add('active');
+    
+    // Iniciar carrusel solo si hay más de una imagen
+    if (project.images.length > 1) {
+        startCarousel(modalImages);
+    } else {
+        stopCarousel();
+    }
+    
+    // Mostrar modal
+    projectModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Función para configurar event listeners del modal
+function setupModalListeners() {
+    const projectModal = document.querySelector('.project-modal');
+    const modalClose = document.querySelector('.modal-close');
+    const btnMockup = document.querySelector('.btn-mockup');
     
     // Cerrar modal
     modalClose.addEventListener('click', () => {
@@ -215,11 +331,14 @@ function initProjects() {
     });
     
     // Prevenir propagación en botones de repositorio
-    document.querySelector('.repo-primary').addEventListener('click', (e) => {
+    const repoPrimary = document.querySelector('.btn-repository');
+    const repoSecondary = document.querySelector('.btn-repository-secondary');
+    
+    repoPrimary.addEventListener('click', (e) => {
         e.stopPropagation();
     });
     
-    document.querySelector('.repo-secondary').addEventListener('click', (e) => {
+    repoSecondary.addEventListener('click', (e) => {
         e.stopPropagation();
     });
 }
