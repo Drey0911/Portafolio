@@ -47,6 +47,7 @@ const projectsData = {
             { class: "tech-python", name: "Python" },
             { class: "tech-flask", name: "Flask" },
             { class: "tech-reactnative", name: "React Native" },
+            { class: "tech-typescript", name: "TypeScript" },
             { class: "tech-mysql", name: "MySQL" }
         ],
         repoLink: "https://github.com/Drey0911/TG-MediFast-Dispensario-BACKEND",
