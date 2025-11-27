@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.addEventListener('scroll', activateLink);
-  activateLink(); // marca al cargar si ya estás scrolleado
+  activateLink(); // marca al cargar 
 });
 
 // Animacion para que la imagen de la tarjeta del HEADER cambie automaticamente cada cierto tiempo
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function() {
         activeTooltip = null;
     }
 
-    // Muestra tooltip "inline" (desktop)
+    // Muestra tooltip 
     function showInlineTooltip(tooltip) {
         hideAllTooltips();
         tooltip.style.opacity = '1';
@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function() {
         activeTooltip = tooltip;
     }
 
-    // Crea o muestra un tooltip flotante en body (móvil)
+    // Crea o muestra un tooltip
     function showFloatingTooltip(tag) {
         hideAllTooltips();
         const source = tag.querySelector('.tech-info');
@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function() {
         floatingTooltip.innerHTML = source.innerHTML;
         document.body.appendChild(floatingTooltip);
 
-        // estilo base (se puede refinar con CSS)
+        // estilo base
         Object.assign(floatingTooltip.style, {
             position: 'fixed',
             zIndex: 9999,
@@ -249,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function() {
             pointerEvents: 'auto'
         });
 
-        // posicionar cerca de la etiqueta (preferencia arriba si cabe)
+        // posicionar cerca de la etiqueta 
         const rect = tag.getBoundingClientRect();
         // temporalmente visible para medir
         floatingTooltip.style.opacity = '0';
@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             floatingTooltip.style.left = Math.min(Math.max(rect.left + rect.width / 2 - ttRect.width / 2, 8), window.innerWidth - ttRect.width - 8) + 'px';
             floatingTooltip.style.top = top + 'px';
-            floatingTooltip.style.transform = 'translateX(0)'; // ya ajustamos left directamente
+            floatingTooltip.style.transform = 'translateX(0)'; 
             floatingTooltip.style.opacity = '1';
         });
     }
@@ -288,11 +288,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Click (móvil -> flotante, desktop -> inline toggle)
         tag.addEventListener('click', function(e) {
             e.stopPropagation();
             if (window.innerWidth <= 768) {
-                // togglear: si ya hay floating y el contenido es el mismo, cerrar
+
                 if (floatingTooltip) {
                     floatingTooltip.remove();
                     floatingTooltip = null;
@@ -311,9 +310,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Cerrar tooltips al hacer click en cualquier parte (excepto en los tags / floating)
+    // Cerrar tooltips al hacer click en cualquier parte
     document.addEventListener('click', function(e) {
-        // si clic dentro del floatingTooltip, no cerrar
+        
         if (floatingTooltip && (floatingTooltip === e.target || floatingTooltip.contains(e.target))) return;
         hideAllTooltips();
     });

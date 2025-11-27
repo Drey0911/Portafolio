@@ -8,7 +8,7 @@ function applyTheme(theme) {
     html.setAttribute('data-theme', 'light');
     toggle.checked = false;          // Sol “encendido” = modo claro
   } else {
-    html.removeAttribute('data-theme'); // ó html.setAttribute('data-theme','dark')
+    html.removeAttribute('data-theme'); 
     toggle.checked = true;           // Luna “encendida” = modo oscuro
   }
   localStorage.setItem('theme', theme);

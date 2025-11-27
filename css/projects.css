@@ -414,22 +414,21 @@
     content: '';
     position: absolute;
     top: 0;
-    left: -100%;
+    left: -100%; 
     width: 100%;
     height: 100%;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     transition: left 0.5s ease;
-    color: white;
+    z-index: -1; 
 }
 
 .btn-view-more:hover::before {
-    left: 100%;
+    left: 0; 
 }
 
 .btn-view-more:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
 }
 
