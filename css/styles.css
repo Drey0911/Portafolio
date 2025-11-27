@@ -922,7 +922,7 @@ section {
     }
     
     .hero-title, .section-title, .animated-title h2 {
-        font-size: 2.5rem;
+        font-size: 2.5rem ;
     }
     
     .animated-title h2 span:nth-child(3) {
@@ -1021,9 +1021,9 @@ section {
     }
     
     .tech-info {
-        opacity: 0 !important;
-        pointer-events: none !important;
-        transform: translateX(-50%) !important;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateX(-50%);
     }
     
     .floating-tech-info {
@@ -1077,15 +1077,15 @@ section {
     }
     
     .modal-body {
-        display: flex !important;
-        flex-direction: column !important;
+        display: flex;
+        flex-direction: column;
     }
     
     .modal-images {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin-right: 0 !important;
-        float: none !important;
+        width: 100%;
+        max-width: 100%;
+        margin-right: 0;
+        float: none;
     }
     
     .modal-description {
@@ -1149,9 +1149,12 @@ section {
     
     .typing {
         width: 100%;
-        max-width: 24ch;
-        margin: 0 auto;
+        max-width: 100%;
+        white-space: normal;
+        overflow: visible;
         text-align: center;
+        font-size: 1.5rem;
+        margin: 0 auto;
     }
 }
 
