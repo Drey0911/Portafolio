@@ -1,0 +1,844 @@
+/* ====================================================================================================================================================
+     Proyectos
+   ==================================================================================================================================================== */
+
+.projects-section {
+    background-color: var(--bg-secondary);
+    padding: 80px 0;
+}
+
+/* Botones de filtro mejorados */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    color: var(--primary-color);
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: var(--primary-color);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+    z-index: -1;
+}
+
+.filter-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.filter-btn:hover {
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+}
+
+.filter-btn i {
+    font-size: 1.1rem;
+}
+
+/* Grid de proyectos mejorado */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 40px;
+    padding: 20px 0;
+}
+
+/* Tarjeta de proyecto rediseñada */
+.project-card {
+    background: linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
+                linear-gradient(145deg, transparent 35%, var(--primary-color), var(--secondary-color)) border-box;
+    border: 3px solid transparent;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+.project-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+}
+
+/* Imagen del proyecto con efecto especial */
+.project-image {
+    height: 250px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--bg-color), var(--bg-secondary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+}
+
+.project-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 40%, var(--card-bg) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.project-card:hover .project-image::after {
+    opacity: 0.7;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+    position: relative;
+    z-index: 1;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.1) rotateY(5deg);
+    filter: drop-shadow(0 15px 30px rgba(59, 130, 246, 0.4));
+}
+
+/* Contenido del proyecto */
+.project-content {
+    padding: 25px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.project-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    background: var(--text-color);
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+}
+
+.project-content h3:hover {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+}
+
+.tech-logo-modal {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* ====================================================================================================================================================
+    Etiquetas de tecnologias
+   ==================================================================================================================================================== */
+
+/* Contenedor de etiquetas ordenado y bonito */
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+    min-height: 32px;
+    align-items: center;
+}
+
+/* Estilo de etiquetas mejorado - como etiquetas reales */
+.project-tech span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: default;
+    white-space: nowrap;
+    border: 1.5px solid;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de brillo al hover */
+.project-tech span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.project-tech span:hover::before {
+    left: 100%;
+}
+
+/* Logos dentro de las etiquetas */
+.tech-logo-card {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    filter: brightness(0.9);
+}
+
+.project-tech span:hover .tech-logo-card {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* Colores específicos para cada tecnología con mejor contraste */
+.tech-html { 
+    background: rgba(227, 79, 38, 0.15) !important; 
+    color: #e34f26 !important; 
+    border-color: rgba(227, 79, 38, 0.4) !important; 
+    box-shadow: 0 2px 8px rgba(227, 79, 38, 0.2);
+}
+
+.tech-css { 
+    background: rgba(21, 114, 182, 0.15) !important; 
+    color: #1572b6 !important; 
+    border-color: rgba(21, 114, 182, 0.4) !important;
+    box-shadow: 0 2px 8px rgba(21, 114, 182, 0.2);
+}
+
+.tech-js { 
+    background: rgba(247, 223, 30, 0.15) !important; 
+    color: #f7df1e !important; 
+    border-color: rgba(247, 223, 30, 0.4) !important;
+    box-shadow: 0 2px 8px rgba(247, 223, 30, 0.2);
+}
+
+.tech-spring { 
+    background: rgba(109, 179, 63, 0.15) !important; 
+    color: #6db33f !important; 
+    border-color: rgba(109, 179, 63, 0.4) !important;
+    box-shadow: 0 2px 8px rgba(109, 179, 63, 0.2);
+}
+
+.tech-java { 
+    background: rgba(237, 139, 0, 0.15) !important; 
+    color: #ed8b00 !important; 
+    border-color: rgba(237, 139, 0, 0.4) !important;
+    box-shadow: 0 2px 8px rgba(237, 139, 0, 0.2);
+}
+
+.tech-postgresql { 
+    background: rgba(51, 103, 145, 0.15) !important; 
+    color: #336791 !important; 
+    border-color: rgba(51, 103, 145, 0.4) !important;
+    box-shadow: 0 2px 8px rgba(51, 103, 145, 0.2);
+}
+
+.tech-python { 
+    background: rgba(53, 114, 165, 0.15) !important; 
+    color: #3572a5 !important; 
+    border-color: rgba(53, 114, 165, 0.4) !important;
+    box-shadow: 0 2px 8px rgba(53, 114, 165, 0.2);
+}
+
+.tech-flask { 
+    background: rgba(0, 0, 0, 0.15) !important; 
+    color: #646262 !important; 
+    border-color: rgba(0, 0, 0, 0.4) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tech-reactnative { 
+    background: rgba(97, 218, 251, 0.15) !important; 
+    color: #61dafb !important; 
+    border-color: rgba(97, 218, 251, 0.4) !important;
+    box-shadow: 0 2px 8px rgba(97, 218, 251, 0.2);
+}
+
+.tech-typescript { 
+    background: rgba(49, 120, 198, 0.15) !important; 
+    color: #3178c6 !important; 
+    border-color: rgba(49, 120, 198, 0.4) !important;
+    box-shadow: 0 2px 8px rgba(49, 120, 198, 0.2);
+}
+
+.tech-mysql { 
+    background: rgba(0, 117, 143, 0.15) !important; 
+    color: #00758f !important; 
+    border-color: rgba(0, 117, 143, 0.4) !important;
+    box-shadow: 0 2px 8px rgba(0, 117, 143, 0.2);
+}
+
+.tech-flutter { 
+    background: rgba(69, 197, 253, 0.15) !important; 
+    color: #45c5fd !important; 
+    border-color: rgba(69, 197, 253, 0.4) !important;
+    box-shadow: 0 2px 8px rgba(69, 197, 253, 0.2);
+}
+
+.tech-firebase { 
+    background: rgba(255, 167, 36, 0.15) !important; 
+    color: #ffa724 !important; 
+    border-color: rgba(255, 167, 36, 0.4) !important;
+    box-shadow: 0 2px 8px rgba(255, 167, 36, 0.2);
+}
+
+.tech-php { 
+    background: rgba(119, 123, 179, 0.15) !important; 
+    color: #777bb3 !important; 
+    border-color: rgba(119, 123, 179, 0.4) !important;
+    box-shadow: 0 2px 8px rgba(119, 123, 179, 0.2);
+}
+
+.tech-laravel { 
+    background: rgba(255, 45, 45, 0.15) !important; 
+    color: #ff2d2d !important; 
+    border-color: rgba(255, 45, 45, 0.4) !important;
+    box-shadow: 0 2px 8px rgba(255, 45, 45, 0.2);
+}
+
+.tech-bootstrap { 
+    background: rgba(86, 61, 124, 0.15) !important; 
+    color: #563d7c !important; 
+    border-color: rgba(86, 61, 124, 0.4) !important;
+    box-shadow: 0 2px 8px rgba(86, 61, 124, 0.2);
+}
+
+.tech-tailwind { 
+    background: rgba(6, 182, 212, 0.15) !important; 
+    color: #06b6d4 !important; 
+    border-color: rgba(6, 182, 212, 0.4) !important;
+    box-shadow: 0 2px 8px rgba(6, 182, 212, 0.2);
+}
+
+.tech-angular { 
+    background: rgba(221, 0, 49, 0.15) !important; 
+    color: #dd0031 !important; 
+    border-color: rgba(221, 0, 49, 0.4) !important;
+    box-shadow: 0 2px 8px rgba(221, 0, 49, 0.2);
+}
+
+.tech-react { 
+    background: rgba(97, 218, 251, 0.15) !important; 
+    color: #61dafb !important; 
+    border-color: rgba(97, 218, 251, 0.4) !important;
+    box-shadow: 0 2px 8px rgba(97, 218, 251, 0.2);
+}
+
+.tech-git { 
+    background: rgba(240, 80, 51, 0.15) !important; 
+    color: #f05033 !important; 
+    border-color: rgba(240, 80, 51, 0.4) !important;
+    box-shadow: 0 2px 8px rgba(240, 80, 51, 0.2);
+}
+
+/* Botón ver más */
+.btn-view-more {
+    background: var(--card-bg);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-view-more::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    transition: left 0.5s ease;
+    color: white;
+}
+
+.btn-view-more:hover::before {
+    left: 100%;
+}
+
+.btn-view-more:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+/* ====================================================================================================================================================
+     Modal de proyectos
+   ==================================================================================================================================================== */
+
+.project-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.project-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+}
+
+.modal-content {
+    position: relative;
+    background: var(--card-bg);
+    border-radius: 25px;
+    width: 100%;
+    max-width: 1400px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 40px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    transform: scale(0.9) translateY(50px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-modal.active .modal-content {
+    transform: scale(1) translateY(0);
+}
+
+/* Botón cerrar mejorado */
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    color: var(--text-color);
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.modal-close:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: rotate(90deg);
+    border-color: var(--primary-color);
+}
+
+/* Header del modal */
+.modal-header {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.modal-title {
+    font-size: 2.2rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 0;
+    flex: 1;
+}
+
+.modal-type-badge {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-right: 50px;
+    text-transform: uppercase;
+}
+
+/* Layout modal - CARRUSEL ARRIBA, INFORMACIÓN ABAJO */
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Sección del carrusel - SIN FONDO DIFERENTE */
+.modal-images-section {
+    position: relative;
+    width: 100%;
+    order: 1;
+}
+
+.modal-images {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: transparent !important;
+    border-radius: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.modal-images img {
+    position: absolute;
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+}
+
+.modal-images img.active {
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+}
+
+/* Controles del carrusel */
+.carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.carousel-btn {
+    width: 45px;
+    height: 45px;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.carousel-indicators {
+    display: flex;
+    gap: 8px;
+    flex: 1;
+    justify-content: center;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    background: var(--border-color);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    width: 30px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.indicator:hover {
+    background: var(--primary-color);
+    transform: scale(1.2);
+}
+
+/* Descripción del modal - DEBAJO DEL CARRUSEL */
+.modal-description {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    order: 2;
+}
+
+.modal-section h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal-section h3 i {
+    font-size: 1.1rem;
+}
+
+.description-text {
+    color: var(--text-light);
+    line-height: 1.8;
+    font-size: 1.05rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+}
+
+.features-list li {
+    padding-left: 30px;
+    position: relative;
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 1.05rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.features-list li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+.technologies-text {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Tags de tecnologías en el modal con logos a color */
+.tech-tags-modal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.tech-tags-modal span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1.5px solid;
+}
+
+.tech-tags-modal span:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Botones del modal mejorados */
+.modal-project-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-repository {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    flex: 0 0 auto;
+    justify-content: center;
+    width: 180px;
+}
+
+/* Botón para repositorio general */
+.btn-repo-general {
+    background: linear-gradient(135deg, #333, #555);
+    color: white;
+}
+
+.btn-repo-general:hover {
+    background: linear-gradient(135deg, #555, #333);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Botón para frontend */
+.btn-repo-frontend {
+    background: linear-gradient(135deg, #333, #555);
+    color: white;
+}
+
+.btn-repo-frontend:hover {
+    background: linear-gradient(135deg, #555, #333);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Botón para backend */
+.btn-repo-backend {
+    background: linear-gradient(135deg, #333, #555);
+    color: white;
+}
+
+.btn-repo-backend:hover {
+    background: linear-gradient(135deg, #555, #333);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Botón mockup */
+.btn-mockup {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+}
+
+.btn-mockup:hover {
+    background: linear-gradient(135deg, #a777e3, #6e8efb);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(110, 142, 251, 0.4);
+}
+
+/* Botón despliegue */
+.btn-deploy {
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+    color: white;
+}
+
+.btn-deploy:hover {
+    background: linear-gradient(135deg, #38ef7d, #11998e);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(56, 239, 125, 0.4);
+}
+
+/* ====================================================================================================================================================
+    Scroll Modal
+   ==================================================================================================================================================== */
+
+.modal-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: rgba(59, 130, 246, 0.5);
+    border-radius: 3px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(59, 130, 246, 0.8);
+}
+
+/* ====================================================================================================================================================
+    Animaciones
+   ==================================================================================================================================================== */
+
+/* Animaciones de fade para el modal de proyectos */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

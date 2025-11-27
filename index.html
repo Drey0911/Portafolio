@@ -12,7 +12,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/var.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/skills.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/footer.css">
     
 </head>
 <body>
@@ -122,11 +129,12 @@
           <span>Andrey Mantilla</span>
           <span>DEVELOPER &amp; FUTURE ENGINEER</span>
         </h2>
-         <p class="subtitle-role">I 💜 Technology</p>
-        <p class="subtitle-tagline">Construyendo mi futuro una linea de codigo a la vez</p>
+         <p class="subtitle-role">I 💜 Technology</p> <br>
+        <p class="subtitle-tagline">
+            Desarrollador Junior en formación, amante del Frontend y las interfaces UI/UX
+            <br> como tambien del desarrollo Fullstack y la creación de aplicaciones móviles.
+        </p>
       </div>
-
-
       
       <div class="hero-buttons">
         <a href="#projects" class="btn-ver-proyectos">Ver proyectos</a>
@@ -505,7 +513,6 @@
             </div>
         </div>
     </div>
-    
     <div class="card-footer">
         <span class="hover-hint">Pasa el cursor o da clic sobre las tecnologías</span>
     </div>
@@ -562,7 +569,6 @@
             </div>
         </div>
     </div>
-    
     <div class="card-footer">
         <span class="hover-hint">Pasa el cursor o da clic sobre las tecnologías</span>
     </div>
@@ -594,9 +600,7 @@
                 </div>
             </div>
         </div>
-        
     </div>
-    
     <div class="card-footer">
         <span class="hover-hint">Pasa el cursor o da clic sobre las tecnologías</span>
     </div>
@@ -628,7 +632,6 @@
             </div>
         </div>
     </div>
-    
     <div class="card-footer">
         <span class="hover-hint">Pasa el cursor o da clic sobre las tecnologías</span>
     </div>
@@ -638,13 +641,13 @@
 <div class="card skilltech-card">
     <div class="main-content">
         <div class="header">
-            <span>HERRAMIENTAS TI</span>
+            <span>HERRAMIENTAS DEV</span>
         </div>
     
         
         <div class="title-group">
             <h3 class="heading">UTILIDADES</h3>
-            <p class="subheading">Herramientas tecnológicas utiles</p>
+            <p class="subheading">Herramientas Dev utiles</p>
         </div>
         
         <div class="tech-tags-container">
@@ -680,7 +683,6 @@
             </div>
         </div>
     </div>
-    
     <div class="card-footer">
         <span class="hover-hint">Pasa el cursor o da clic sobre las tecnologías</span>
     </div>
@@ -725,8 +727,7 @@
             </div>
         </div>
     </div>
-    
-    <div class="card-footer">
+<div class="card-footer">
         <span class="hover-hint">Pasa el cursor o da clic sobre las tecnologías</span>
     </div>
 </div>
@@ -734,32 +735,52 @@
     </div>
 </section>
 
-    <!-- Projects -->
-    <section id="projects" class="projects-section">
+<!-- Projects -->
+<section id="projects" class="projects-section">
     <div class="section-divider"></div>
     <div class="container">
         <h2 class="section-title">Mis proyectos</h2>
         
-        <!-- Botones de filtro -->
+        <!-- Botones de filtro mejorados -->
         <div class="filter-buttons">
-            <button class="filter-btn active" data-filter="all">Todos</button>
-            <button class="filter-btn" data-filter="basic">Basic</button>
-            <button class="filter-btn" data-filter="fullstack">Fullstack</button>
+            <button class="filter-btn active" data-filter="all">
+                <i class="fas fa-th"></i>
+                <span>Todos</span>
+            </button>
+            <button class="filter-btn" data-filter="frontend">
+                <i class="fas fa-palette"></i>
+                <span>Frontend</span>
+            </button>
+            <button class="filter-btn" data-filter="backend">
+                <i class="fas fa-server"></i>
+                <span>Backend</span>
+            </button>
+            <button class="filter-btn" data-filter="fullstack">
+                <i class="fas fa-layer-group"></i>
+                <span>Fullstack</span>
+            </button>
         </div>
         
-        <div class="projects-grid">
-        </div>
+        <div class="projects-grid"></div>
     </div>
 </section>
 
-    <!-- Project Modal -->
-    <div class="project-modal">
-        <div class="modal-content">
-            <button class="modal-close">&times;</button>
-            <div class="modal-header">
-                <h2 class="modal-title"></h2>
-            </div>
-            <div class="modal-body">
+<!-- Project Modal Mejorado -->
+<div class="project-modal" style="display: none;">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+        <button class="modal-close">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <div class="modal-header">
+            <h2 class="modal-title"></h2>
+            <span class="modal-type-badge"></span>
+        </div>
+        
+        <div class="modal-body">
+            <!-- Carrusel de imágenes arriba -->
+            <div class="modal-images-section">
                 <div class="modal-images">
                     <img src="" alt="Captura 1" class="active">
                     <img src="" alt="Captura 2">
@@ -769,30 +790,43 @@
                     <img src="" alt="Captura 6">
                     <img src="" alt="Captura 7">
                 </div>
-                <div class="modal-description">
-                    <h3>Descripción detallada</h3>
-                    <p></p>
-                    <h3>Caracteristicas</h3>
-                    <ul>
-                        <li></li>
-                    </ul>        
-                    <h3>Tecnologias</h3>
-                    <p></p>
-                    <div class="modal-project-buttons">
-                        <a href="" class="btn-repository" target="_blank">
-                            <i class="fab fa-github"></i> Repositorio
-                        </a>
-                        <a href="" class="btn-repository btn-repository-secondary" target="_blank" style="display: none;">
-                            <i class="fab fa-github"></i> Repositorio Frontend
-                        </a>
-                        <a href="" class="btn-repository btn-mockup" target="_blank">
-                            <i class="fas fa-image"></i> Ver Mockup
-                        </a>
-                    </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="carousel-indicators"></div>
+                    <button class="carousel-btn next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Información del proyecto debajo -->
+            <div class="modal-description">
+                <div class="modal-section">
+                    <h3><i class="fas fa-info-circle"></i> Descripción</h3>
+                    <p class="description-text"></p>
+                </div>
+                
+                <div class="modal-section">
+                    <h3><i class="fas fa-check-circle"></i> Características</h3>
+                    <ul class="features-list"></ul>
+                </div>
+                
+                <div class="modal-section">
+                    <h3><i class="fas fa-cog"></i> Tecnologías</h3>
+                    <p class="technologies-text"></p>
+                    <div class="tech-tags-modal"></div>
+                </div>
+                
+                <div class="modal-project-buttons">
+                    <!-- Los botones se generarán dinámicamente -->
                 </div>
             </div>
         </div>
     </div>
+</div>
+
 <!-- Contact -->
 <section id="contact" class="contact-section">
     <div class="section-divider"></div>

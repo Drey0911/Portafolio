@@ -37,38 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
         bar.style.setProperty('--width', `${percent}%`);
     });
     
-    // Formulario de contacto con EmailJS
-    const contactForm = document.getElementById('contact-form');
-    
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const submitBtn = this.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Enviando...';
-        
-        emailjs.sendForm('service_cg0y95w', 'template_irzewtt', this)
-            .then(() => {
-                submitBtn.textContent = '¡Mensaje enviado!';
-                contactForm.reset();
-                
-                setTimeout(() => {
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                }, 3000);
-            }, (error) => {
-                submitBtn.textContent = 'Error al enviar';
-                console.error('Error:', error);
-                
-                setTimeout(() => {
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                }, 3000);
-            });
-    });
-    
     // Efecto de escritura en el título
     const typingElement = document.querySelector('.typing');
     const phrases = [

@@ -1,60 +1,16 @@
 /* ====================================================================================================================================================
-   ST - MODO CLARO-OSCURO Y VARIABLES CSS
+    Estilos CSS Globales para toda la pagina
    ==================================================================================================================================================== */
 
-/* Modo Oscuro (Predeterminado1) */
+/* Imports de los demas CSS */
 
-:root {
-    --primary-color: #3b82f6;
-    --primary-dark: #2563eb;
-    --secondary-color: #8b5cf6;
-    --text-color: #f8fafc;
-    --text-light: #94a3b8;
-    --bg-color: #0f172a;
-    --bg-secondary: #1e293b;
-    --card-bg: #1e293b;
-    --border-color: #334155;
-    --project-color: #111b2b;
-    --primary-header-color: #1b1b2f 0%;
-    --secondary-header-color: #16213e 80%;
-    --social-bg:  rgba(255, 255, 255, 0.1);
-    --social-icon: #fff;
-    --tech-html: rgba(227, 79, 38, 0.1);
-    --tech-flutter-text: #61cafa;
-    --tech-js-text:#f7df1e;
-    --tech-firebase-text: #ffa724;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.25), 0 2px 4px -1px rgba(0, 0, 0, 0.15);
-    --transition: all 0.3s ease;
-}
-
-/* Modo Claro */
-
-html[data-theme="light"] {
-  --primary-color: #3b82f6;        
-  --primary-dark: #2563eb;
-  --secondary-color: #7c3aed;
-  --text-color: #0f172a;           
-  --text-light: #475569;
-  --bg-color: #f8fafc;             
-  --bg-secondary: #e2e8f0;
-  --card-bg: #eef1f6;
-  --border-color: #cbd5e1;
-  --project-color: #cdd5e2;
-  --primary-header-color: #11ff00 0%;
-  --secondary-header-color: #16213e 80%;
-  --social-bg:  rgba(255, 255, 255, 0.1);
-  --social-icon: #323e51;
-  --tech-html: rgba(251, 97, 55, 0.1);
-  --tech-flutter-text: #117886;
-  --tech-js-text:#a79417;
-  --tech-firebase-text: #de6531;
-  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-            0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
-/* ====================================================================================================================================================
-    ST - ESTILOS GLOBALES
-   ==================================================================================================================================================== */
+@import "var.css";
+@import "hero.css";
+@import "about.css";
+@import "skills.css";
+@import "projects.css";
+@import "contact.css";
+@import  "footer.css";
 
 * {
     margin: 0;
@@ -87,9 +43,8 @@ html, body {
     box-sizing: border-box;
 }
 
-
 /* ====================================================================================================================================================
-    ST - SECCIONES GENERALES
+   Secciones de la pagina
    ==================================================================================================================================================== */
 
 section {
@@ -117,7 +72,7 @@ section {
 }
 
 /* ====================================================================================================================================================
-    ST - BOTONES DE LA PAGINA
+    Botones Generales de la pagina
    ==================================================================================================================================================== */
 
 /* Botones Generales */
@@ -156,25 +111,6 @@ section {
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-
-/* Boton de ver mas (proyectos)*/
-
-.btn-view-more {
-    background-color: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-    width: 100%;
-    padding: 8px;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.btn-view-more:hover {
-    background-color: var(--primary-color);
-    color: white;
 }
 
 /* Boton para repositorio (modal proyectos) */
@@ -373,11 +309,11 @@ section {
 .modal-project-buttons {
     display: flex;
     gap: 25px;
-    margin-top: auto; /* Esto empuja los botones hacia abajo */
+    margin-top: auto;
 }
 
 /* ====================================================================================================================================================
-     ST - BARRA DE NAVEGACION NAVBAR
+     Barra de navegacion
    ==================================================================================================================================================== */
 
 /* Navbar general */
@@ -475,7 +411,7 @@ section {
 }
 
 /* ====================================================================================================================================================
-     ST - LOGOTIPO DE LA PAGINA - AM
+    Logotipo
    ====================================================================================================================================================*/
 
 /* Logo en el Header */
@@ -526,1281 +462,7 @@ section {
 }
 
 /* ====================================================================================================================================================
-     ST - HERO SECTION - HEADER
-   ==================================================================================================================================================== */
-
-.hero.custom-hero {
-  position: relative;
-  overflow: hidden;
-  padding: 150px 0 100px;
-  background: radial-gradient(circle at center, --primary-header-color, --secondary-header-color);
-} 
-
-.hero .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-}
-
-.hero-content {
-    text-align: center; 
-    flex: 1;
-    animation: fadeInUp 1s ease;
-    width: 100%;
-}
-
-.hero-title {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
-.hero-buttons {
-    justify-content: center;
-    margin: 0 auto 30px; 
-    display: flex;
-    gap: 20px;
-}
-
-.hero-image {
-    flex: 1;
-    position: relative;
-    animation: fadeInRight 1s ease;
-}
-
-/* Estilos para los botones */
-
-.hero-buttons {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
- /* Hero fondo de la lluvia Header */
- 
-.hero.custom-hero .container {
-  position: relative;
-  z-index: 2; 
-}
-
-/* Capa animada de partículas de lluvia */
-
-.hero.custom-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background-image:
-    radial-gradient(ellipse 1.5px 2px at 1.5px 50%, var(--primary-color, #09f) 0%, transparent 90%),
-    radial-gradient(ellipse 1.5px 2px at 50% 150%, var(--primary-color, #09f) 0%, transparent 90%);
-  background-size: 25px 8px, 25px 8px;
-  background-repeat: repeat;
-  animation: rain 100s linear infinite;
-  opacity: 0.3;
-}
-
-/* ====================================================================================================================================================
-     ST - CARTA DE PERFIL DEL HEADER
-   ==================================================================================================================================================== */
-
-   /* Envoltorio y borde de la carta */
-
-.card-wrapper {
-  position: relative;
-  display: inline-block;
-}
-
-.pulse-rect {
-  position: absolute;
-  inset: 0;
-  border: 3px solid var(--primary-color);
-  border-radius: 20px;
-  animation: pulseRect 3s ease-in-out infinite;
-  z-index: 1;
-}
-
-/* Tarjeta */
-
-.profile-card {
-  position: relative;
-  width: 280px;
-  background-color: var(--card-bg);
-  border-radius: 20px;
-  box-shadow: var(--shadow);
-  overflow: hidden;
-  transition: transform 0.4s ease;
-}
-.profile-card:hover {
-  transform: translateY(-8px);
-}
-
-/* Foto grande de la carta */
-
-.profile-card .img-large {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.6s ease;
-  z-index: 2;
-}
-.card-wrapper:hover .img-large {
-  opacity: 1;
-}
-
-/* banner de la carta */
-
-.profile-card .banner {
-  height: 120px;
-  background-color: var(--secondary-color);
-  background-image:
-    linear-gradient(60deg,  rgba(255,255,255,0.1) 25%, transparent 25%),
-    linear-gradient(-60deg, rgba(255,255,255,0.1) 25%, transparent 25%),
-    linear-gradient(0deg,   rgba(255,255,255,0.1) 50%, transparent 50%);
-  background-size: 20px 34.64px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  transition: opacity var(--transition);
-}
-
-/* avatar pequeño */
-
-.profile-card .image-container {
-  width: 100px;
-  height: 100px;
-  margin: -50px auto 10px;
-  transition: opacity var(--transition);
-}
-.profile-card .img-small {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  transition: opacity 0.6s ease;
-}
-.card-wrapper:hover .img-small {
-  opacity: 0;
-}
-
-/* texto de la carta */
-
-.profile-card .text-info {
-  text-align: center;
-  padding: 0 15px 15px;
-  transition: opacity var(--transition);
-}
-.card-wrapper:hover .text-info {
-  opacity: 0;
-}
-
-/* botones sociales para la carta */
-
-.profile-card .social-links {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  padding: 15px 0 20px;
-  background-color: var(--bg-secondary);
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  position: relative;
-}
-
-/* Estado de hover automático */
-
-.card-wrapper.auto-hover .img-large {
-  opacity: 1;
-}
-.card-wrapper.auto-hover .img-small {
-  opacity: 0;
-}
-.card-wrapper.auto-hover .text-info {
-  opacity: 0;
-}
-.card-wrapper.auto-hover .profile-card {
-  transform: translateY(-8px);
-}
-
-/* ====================================================================================================================================================
-     ST - TITULOS ANIMADOS
-   ==================================================================================================================================================== */
-
-/* Linea del titulo */
-
-.title-line {
-    display: block;
-    text-align: center;
-}
-
-/* Texto de presentacion Modo maquina de escribir */
-
-.typing {
-    font-style: italic;
-    color: var(--secondary-color);
-    border-right: 3px solid;
-     margin: 0 auto; 
-    width: 20ch;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
-}
-
-/* Estilos para el título animado (Header) */
-
-.animated-title {
-    position: relative;
-    margin-bottom: 30px;
-}
-
-.animated-title h2 {
-    margin: 0;
-    padding: 0;
-    font-size: 3.5em;
-    color: transparent;
-    text-transform: uppercase;
-    font-family: 'Arial', sans-serif;
-    font-weight: bold;
-    position: relative;
-    display: inline-block;
-}
-
-.animated-title h2 span:nth-child(1) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: var(--text-color);
-    transition: 0.5s;
-    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
-    overflow: hidden;
-}
-
-.animated-title h2:hover span:nth-child(1) {
-    transform: translateY(-10px);
-}
-
-.animated-title h2 span:nth-child(2) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: var(--text-color);
-    transition: 0.5s;
-    clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
-    overflow: hidden;
-}
-
-.animated-title h2:hover span:nth-child(2) {
-    transform: translateY(10px);
-}
-
-.animated-title h2 span:nth-child(3) {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%) scaleY(0);
-    width: 100%;
-    color: var(--secondary-color);
-    background: var(--bg-color);
-    font-size: 0.3em;
-    font-weight: 500;
-    letter-spacing: 0.5em;
-    text-align: center;
-    padding-left: 15px;
-    transition: 0.5s;
-    text-transform: uppercase;
-}
-
-.animated-title h2:hover span:nth-child(3) {
-    transform: translateY(-50%) scaleY(1);
-}
-
-/* ====================================================================================================================================================
-     ST - SOBRE MI - SECCION
-   ==================================================================================================================================================== */
-
-/* About Section */
-
-.about-section {
-    background-color: var(--bg-secondary);
-     padding: 1px 0 40px;
-}
-
-/* Estilos para las tarjetas about */
-
-.animated-border-card {
-  width: 290px;
-  height: auto;
-  min-height: 350px;
-  background: var(--bg-secondary);
-  position: relative;
-  border-radius: 20px;
-  padding: 2px;
-  margin: 15px;
-  overflow: hidden; 
-}
-
-/* Capa del borde animado */
-
-.animated-border-card::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    0deg,
-    #b4daff,
-    #00aaff,
-    #5d3fa5,
-    #8b5cf6,
-    #003366
-  );
-  z-index: 0;
-  animation: borderRotate 8s linear infinite;
-  transform-origin: center center;
-}
-
-/* Capa que cubre el centro */
-
-.animated-border-card::after {
-  content: '';
-  position: absolute;
-  inset: 5px; /* Grosor del borde */
-  background: var(--bg-color);
-  border-radius: 18px;
-  z-index: 1;
-}
-
-/* Contenido de la tarjeta*/
-
-.card-content {
-  position: relative;
-  z-index: 2;
-  height: 100%;
-  padding: 20px;
-  border-radius: 18px;
-  color: white;
-}
-
-.card-content li {
-  color: var(--text-color);
-}
-
-/* Estilos del contenido de las cartas */
-
-.card-heading {
-  font-size: 1.5em;
-  margin-bottom: 15px;
-  text-align: center;
-  color: var(--text-color);
-}
-
-.animated-border-card p {
-  color: var(--text-light);
-  font-size: 0.9em;
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-.animated-border-card ul {
-  color: white;
-  font-size: 0.85em;
-  padding-left: 20px;
-  text-align: left;
-}
-
-.animated-border-card li {
-  margin-bottom: 8px;
-}
-
-.animated-border-card strong {
-  color: #4dabf7;
-}
-
-/* Listas de las cartas */
-
-.profile-list {
-    list-style: none;
-    margin-top: 20px;
-}
-
-.profile-list li {
-    margin-bottom: 10px;
-    display: flex;
-}
-
-.profile-list li strong {
-    min-width: 100px;
-    display: inline-block;
-    color: var(--primary-color);
-}
-
-/* Contenido de las caracteristicas */
-
-
-.goals-list {
-    list-style: none;
-    margin-top: 20px;
-}
-
-.goals-list li {
-    margin-bottom: 10px;
-    position: relative;
-    padding-left: 25px;
-}
-
-.goals-list li::before {
-    content: '\f00c';
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    position: absolute;
-    left: 0;
-    color: var(--primary-color);
-}
-
-/* ====================================================================================================================================================
-     ST - HABILIDADES - SECCION
-   ==================================================================================================================================================== */
-
-.skills-section {
-    padding: 60px 0;
-    position: relative;
-    background-color: var(--bg-primary);
-}
-
-.skills-carousel-wrapper {
-    position: relative;
-    margin: 40px 0;
-    overflow: hidden;
-}
-
-.skills-carousel {
-    overflow: hidden;
-    position: relative;
-    padding: 20px 0;
-}
-
-.skills-track {
-    display: flex;
-    gap: 15px;
-    animation: scroll 25s linear infinite;
-    width: calc(150px * 28);
-}
-
-.skill-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 140px;
-    height: 60px;
-    padding: 10px 15px;
-    background-color: var(--card-bg);
-    border-radius: 8px;
-    box-shadow: var(--shadow);
-    transition: all 0.3s ease;
-    gap: 10px;
-    cursor: default;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.skill-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.4s ease-in-out;
-}
-
-.skill-item:hover::before {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
-.skill-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    background-color: var(--primary-color);
-}
-
-.skill-item:hover img {
-    transform: scale(1.1);
-}
-
-.skill-item:hover span {
-    color: white;
-    transform: translateX(5px);
-}
-
-.skill-item img {
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-    flex-shrink: 0;
-    transition: all 0.3s ease;
-}
-
-.skill-item span {
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--text-light);
-    transition: all 0.3s ease;
-    white-space: nowrap;
-}
-
-.skills-cards-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 50px;
-}
-
-.card {
-    width: 320px;
-    height: 380px;
-    padding: 25px;
-    position: relative;
-    overflow: visible;
-    background: var(--bg-color);
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-    background: linear-gradient(var(--bg-color), var(--bg-color)) padding-box,
-                linear-gradient(145deg, transparent 35%, var(--primary-color), var(--secondary-color)) border-box;
-    border: 6px solid transparent;
-    transform-origin: center bottom;
-}
-
-.card:hover {
-    transform: translateY(-8px) rotate(1deg);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-}
-
-/* Bordes de colores para cada categoría */
-.skilltech-card::before {
-    display: none;
-}
-
-.main-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.header span {
-    font-size: 12px;
-    color: var(--text-light);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 600;
-}
-
-.title-group {
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.heading {
-    font-size: 26px;
-    margin: 15px 0 5px 0;
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-.skilltech-card .heading {
-    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.subheading {
-    font-size: 13px;
-    color:  var(--text-light);
-    margin: 0;
-}
-
-.tech-tags-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
-    justify-content: center;
-}
-
-.tech-tag {
-    position: relative;
-    padding: 6px 12px;
-    background: var(--bg-secondary);
-    border-radius: 20px;
-    font-size: 13px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 600;
-    z-index: 5;
-    -webkit-tap-highlight-color: transparent;
-}
-
-/* Colores para cada tecnología en las tarjetas */
-.tech-tag[data-tech="html"]:hover { background: #E44D26; color: #FAFAFA; }
-.tech-tag[data-tech="css"]:hover { background: #2965f1; color: #FAFAFA; }
-.tech-tag[data-tech="js"]:hover { background: #b5a227; color: #FAFAFA; }
-.tech-tag[data-tech="bootstrap"]:hover { background: #7952B3; color: #FAFAFA; }
-.tech-tag[data-tech="tailwind"]:hover { background: #38BDF8; color: #FAFAFA; }
-.tech-tag[data-tech="java"]:hover { background: #5382A1; color: #FAFAFA; }
-.tech-tag[data-tech="spring"]:hover { background: #6DB33F; color: #FAFAFA; }
-.tech-tag[data-tech="php"]:hover { background: #777BB4; color: #FAFAFA; }
-.tech-tag[data-tech="mysql"]:hover { background: #4479A1; color: #FAFAFA; }
-.tech-tag[data-tech="postgresql"]:hover { background: #9e20c8; color: #FAFAFA; }
-.tech-tag[data-tech="flutter"]:hover { background: #02569B; color: #FAFAFA; }
-.tech-tag[data-tech="angular"]:hover { background: #DD0031; color: #FAFAFA; }
-.tech-tag[data-tech="react"]:hover { background: #32abcc; color: #FAFAFA; }
-.tech-tag[data-tech="python"]:hover { background: #3776AB; color: #FAFAFA; }
-.tech-tag[data-tech="firebase"]:hover { background: #c96a11; color: #FAFAFA; }
-.tech-tag[data-tech="reactnative"]:hover { background: #32abcc; color: #FAFAFA; }
-.tech-tag[data-tech="flask"]:hover { background: #3776AB; color: #FAFAFA; }
-.tech-tag[data-tech="supabase"]:hover { background: #058138; color: #FAFAFA; }
-.tech-tag[data-tech="figma"]:hover { background: #e26c57; color: #FAFAFA; }
-.tech-tag[data-tech="git"]:hover { background: #383a3c; color: #FAFAFA; }
-.tech-tag[data-tech="restapi"]:hover { background: #38BDF8; color: #FAFAFA; }
-.tech-tag[data-tech="laravel"]:hover { background: #e93208; color: #FAFAFA; }
-.tech-tag[data-tech="express"]:hover { background: #eed00e; color: #FAFAFA; }
-.tech-tag[data-tech="nodejs"]:hover { background: #83CD29; color: #FAFAFA; }
-.tech-tag[data-tech="mongodb"]:hover { background: #589636; color: #FAFAFA; }
-
-.tech-info {
-    position: absolute;
-    bottom: calc(100% + 10px);
-    left: 50%;
-    transform: translateX(-50%);
-    width: 250px;
-    background: var(--bg-secondary);
-    padding: 12px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.3s ease;
-    z-index: 10;
-    color: var(--text-color);
-}
-
-.tech-tag:hover .tech-info {
-    opacity: 1;
-    transform: translateX(-50%) translateY(-5px);
-}
-
-.tech-info::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 8px;
-    border-style: solid;
-    border-color: #333 transparent transparent transparent;
-}
-
-.card-footer {
-    margin-top: auto;
-    margin-bottom: auto;
-    padding-top: 15px;
-    text-align: center;
-    border-top: 1px solid var(--bg-secondary);
-    font-weight: 600;
-    color: var(--text-light);
-}
-
-.hover-hint {
-    font-size: 11px;
-    color: var(--text-light);
-    display: inline-block;
-    padding: 4px 10px;
-    border-radius: 12px;
-}
-
-.fade-overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100px;
-    pointer-events: none;
-    z-index: 2;
-}
-
-.fade-overlay.left {
-    left: 0;
-    background: linear-gradient(to right, var(--bg-color), transparent);
-}
-
-.fade-overlay.right {
-    right: 0;
-    background: linear-gradient(to left, var(--bg-color), transparent);
-}
-
-@keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-150px * 14)); }
-}
-
-@media (max-width: 768px) {
-    .card {
-        width: 280px;
-        height: 360px;
-    }
-    
-    .heading {
-        font-size: 22px;
-    }
-    
-    .tech-tag.active .tech-info {
-        opacity: 1;
-        transform: translateX(-50%) translateY(-5px);
-        pointer-events: auto;
-    }
-    
-    /* Cerrar tooltip al tocar fuera */
-    .tech-tags-container {
-        position: relative;
-    }
-
-    .main-content {
-        flex: 1;
-        overflow-y: auto;
-        overflow-x: hidden;
-        max-height: calc(100% - 10px);
-    }
-    
-    .card-footer {
-        flex-shrink: 0;
-        margin-top: auto;
-    }
-}
-
-
-/* ====================================================================================================================================================
-     ST - PROYECTOS - SECCION
-   ==================================================================================================================================================== */
-
-   .projects-section {
-    background-color: var(--bg-secondary);
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.project-card {
-    background-color:var(--project-color);
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
-.project-image {
-    height: 200px;
-    overflow: hidden;
-    background-color:var(--bg-secondary);
-}
-
-.project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition);
-}
-
-.project-card:hover .project-image img {
-    transform: scale(1.1);
-}
-
-.project-content {
-    padding: 20px;
-}
-
-.project-content h3 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-    color: var(--primary-color);
-}
-
-.project-content p {
-    color: var(--text-light);
-    margin-bottom: 15px;
-}
-
-.project-tech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 15px;
-}
-
-.project-tech span {
-    font-size: 0.8rem;
-    padding: 3px 10px;
-    border-radius: 20px;
-    font-weight: 600;
-}
-
-/* Tecnologias usadas en los proyectos */
-
-.tech-html      { background: var(--tech-html);      color: #e34f26; }
-.tech-css       { background: rgba(33,150,243,0.1);  color: #2196f3; }
-.tech-js        { background: rgba(247,223,30,0.1);  color: var(--tech-js-text); }
-.tech-bootstrap { background: rgba(121,82,179,0.1);  color: #7952b3; }
-.tech-php       { background: rgba(147,136,191,0.1); color: #2f4190; }
-.tech-java      { background: rgba(182,0,55,0.1);    color: #b60031; }
-.tech-spring    { background: rgba(109,179,63,0.1);  color: #6db33f; }
-.tech-flutter   { background: rgba(97,202,250,0.1);  color: var(--tech-flutter-text); }
-.tech-firebase  { background: rgba(255,167,36,0.1);  color: var(--tech-firebase-text); }
-.tech-mysql     { background: rgba(0,117,143,0.1);   color: #00758f; }
-.tech-postgresql{ background: rgba(56,63,186,0.1);   color: #4466b5; }
-.tech-python   { background: rgba(53,114,165,0.1);   color: #3776ab; }
-.tech-reactnative { background: rgba(99, 221, 255, 0.1);  color: #1c99ff; }
-.tech-flask    { background: rgba(53,114,165,0.1);   color: #3776ab; }
-.tech-typescript { background: rgba(0,122,204,0.1);   color: #1e6a9c; }
-
-   /* ====================================================================================================================================================
-     ST - FOOTER 
-   ==================================================================================================================================================== */
-
-.footer {
-  background: var(--bg-secondary);
-  color: var(--text-light);
-  padding: 60px 0 20px;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr; 
-  align-items: start;
-  gap: 50px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.footer-brand {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.footer-brand .logo {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.footer-brand p {
-  color: var(--text-light);
-  font-size: 1rem;
-  line-height: 1.6;
-  margin: 0;
-}
-
-.footer-nav h4 {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-  color: var(--primary-color);
-}
-
-.footer-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-nav li {
-  margin: 12px 0;
-}
-
-.footer-nav a {
-  color: var(--text-light);
-  text-decoration: none;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: var(--transition);
-}
-
-.footer-nav a:hover {
-  color: var(--primary-color);
-  transform: translateX(5px);
-}
-
-.footer-nav a i {
-  width: 20px;
-  text-align: center;
-}
-
-.social-links {
-    display: flex;
-    gap: 15px;
-}
-
-.social-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(59, 130, 246, 0.1);
-    border-radius: 50%;
-    color: var(--primary-color);
-    font-size: 1.2rem;
-    transition: var(--transition);
-}
-
-.social-links a:hover {
-    background-color: var(--primary-color);
-    color: white;
-    transform: translateY(-3px);
-}
-
-.footer-bottom {
-  text-align: center;
-  border-top: 1px solid var(--border-color);
-  padding: 25px 0 0;
-  margin-top: 40px;
-  color: var(--text-light);
-  font-size: 0.9rem;
-}
-.footer-social h4 {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    color: var(--primary-color);
-}
-
-.social-links {
-    display: flex;
-    gap: 15px;
-}
-
-/* Iconos sociales en el footer */
-
-.social-icons {
-    display: flex;
-    gap: 10px;
-}
-
-.social-icon {
-    position: relative;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--social-bg); 
-    border-radius: 10px;
-    color: var(--social-icon);
-    font-size: 1.5rem;
-    text-decoration: none;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-    overflow: hidden;
-}
-
-.social-icon:hover {
-    color: #fff;
-    transform: translateY(-5px);
-}
-
-.social-icon::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(45deg, var(--i), var(--j));
-    border-radius: 10px;
-    z-index: -1;
-    opacity: 0;
-    transition: 0.5s;
-}
-
-.social-icon:hover::before {
-    opacity: 1;
-}
-
-.social-icon:nth-child(1) {
-    --i: #0162c8;
-    --j: #55e7fc;
-}
-
-.social-icon:nth-child(2) {
-    --i: #755bea;
-    --j: #ff72c0;
-}
-
-.social-icon:nth-child(3) {
-    --i: #ff0058;
-    --j: #03a9f4;
-}
-
-.social-icon span {
-    position: absolute;
-    background: #fff;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    border-radius: 50%;
-    animation: animate 1s linear infinite;
-    opacity: 0.25;
-}
-
-/* ====================================================================================================================================================
-     ST - ESTILOS RESPONSIVE
-   ==================================================================================================================================================== */
-
-/* ====================================================================================================================================================
-    ST - DISPOSITIVOS MEDIANOS (Tablets, 768px - 992px)
-   ==================================================================================================================================================== */
-
-@media (max-width: 992px) {
-    
-    /* Layout del héroe */
-    .hero .container {
-        flex-direction: column;
-    }
-    
-    .hero-content {
-        text-align: center;
-        flex: 1; 
-    }
-    
-    .hero-buttons {
-        justify-content: center;
-    }
-    
-    /* Modales y formularios */
-    .modal-body {
-        grid-template-columns: 1fr;
-    }
-    
-    .contact-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .modal-content {
-        display: flex;
-        flex-direction: column;
-        padding: 15px;
-        max-height: 90vh;
-    }
-
-    /* Cambio del modal a modo responsive para cambio de lugar de las imagenes */
-
-    .modal-body {
-        display: flex !important;
-        flex-direction: column !important;
-    }
-    
-    .modal-images {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin-right: 0 !important;
-        float: none !important;
-    }
-
-    /* Contenido en medio */
-    .modal-description {
-        order: 2;
-        flex: 1;
-    }
-
-    /* Botones abajo */
-    .modal-project-buttons {
-        order: 3;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        margin-top: auto;
-        padding-top: 15px;
-        border-top: 1px solid var(--border-color);
-    }
-
-    .btn-repository, .btn-mockup {
-        width: 100%;
-        margin: 0;
-    }
-
-    /* Asegurar que las imágenes ocupen todo el ancho */
-    .modal-images img {
-        width: 100%;
-        height: auto;
-        max-height: 100%;
-        object-fit: contain;
-    }
-
-    /* Menú de navegación móvil */
-    .nav-links {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 80px);
-        background-color: var(--bg-color);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 30px;
-        transition: var(--transition);
-    }
-    
-    .nav-links.active {
-        left: 0;
-    }
-    
-    /* Hamburguer menu animada */
-    .hamburger {
-        display: flex;
-    }
-    
-    .hamburger.active span:nth-child(1) {
-        transform: translateY(9px) rotate(45deg);
-    }
-    
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .hamburger.active span:nth-child(3) {
-        transform: translateY(-9px) rotate(-45deg);
-    }
-    
-    /* Títulos responsivos */
-    .hero-title, .section-title, .animated-title h2 {
-        font-size: 2.5rem;
-    }
-    
-    .animated-title h2 span:nth-child(3) {
-        font-size: 0.25em;
-        letter-spacing: 0.3em;
-    }
-    
-    /* Cards animadas */
-    .animated-border-card {
-        width: 100%;
-        max-width: 350px;
-    }
-    
-    /* Botones en columna */
-    .hero-buttons {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .btn-ver-proyectos, .btn-cv {
-        width: 100%;
-        max-width: 250px;
-        margin: 0 auto;
-    }
-
-      .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    text-align: center;
-  }
-  
-  .footer-brand {
-    align-items: center;
-  }
-  
-  .social-links {
-    justify-content: center;
-  }
-  
-  .footer-nav a {
-    justify-content: center;
-  }
-}
-
-/* =====================================================================================================================================================
-    ST - DISPOSITIVOS PEQUEÑOS (Móviles, hasta 576px)
-   ====================================================================================================================================================*/
-
-@media (max-width: 576px) {
-
-    /* Efecto de escritura */
-    .typing {
-        width: 100%;        
-        max-width: 24ch;     
-        margin: 0 auto;     
-        text-align: center;  
-    }
-
-    /* Ajustes de espaciado */
-    section {
-        padding: 60px 0;
-    }
-    
-    .hero {
-        padding: 120px 0 80px;
-    }
-    
-    /* Títulos más pequeños */
-    .hero-title {
-        font-size: 2rem;
-    }
-    
-    /* Botones a pantalla completa */
-    .btn {
-        width: 100%;
-    }
-    
-    /* Contenedor de contacto */
-    .contact-container {
-        padding: 30px;
-    }
-}
-
-/* ====================================================================================================================================================
-    ST - DISPOSITIVOS MUY PEQUEÑOS (Móviles pequeños, hasta 480px)
-   ==================================================================================================================================================== */
-
-@media (max-width: 480px) {
-
-    /* Títulos animados más pequeños */
-    .animated-title h2 {
-        font-size: 2em;
-    }
-    
-    /* Ajustes finos de botones */
-    .btn-ver-proyectos, .btn-cv {
-        font-size: 0.9em;
-        padding: 12px 20px;
-        height: 46px;
-    }
-}
-
-/* ====================================================================================================================================================
-     ST - FOLDER ANIMACION Y BOTON DE VER MI CV From: universe.io
+     Folder de ver mi CV From: universe.io
    ==================================================================================================================================================== */
    
         .folderContainer {
@@ -1838,7 +500,7 @@ section {
         }
 
 /* ====================================================================================================================================================
-     ST - ESTILOS PARA LINEA DIVISORA ENTRE SECCIONES
+    Linea divisora entre secciones
    ==================================================================================================================================================== */
 
 /* Divisor entre secciones */
@@ -1890,23 +552,7 @@ section {
 }
 
 /* ====================================================================================================================================================
-     ST - SUBTITULO DEL HERO (HEADER)
-   ==================================================================================================================================================== */
-
-.animated-title .subtitle-role {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #C3BBFF;
-}
-
-.animated-title .subtitle-tagline {
-  font-size: 1rem;
-  font-style: italic;
-  color: var(--text-light);
-}
-
-/* ====================================================================================================================================================
-     ST - BOTON ANIMADO DE CLARO-OSCURO From: Universe.io
+     Boton Claro oscuro From: Universe.io
    ==================================================================================================================================================== */
 
 .switch {
@@ -2147,227 +793,7 @@ section {
 }
 
 /* ====================================================================================================================================================
-     ST - ESTILOS MODAL GENERALES
-   ==================================================================================================================================================== */
-
-.modal-content {
-    background-color: var(--bg-color);
-    border-radius: 15px;
-    width: 90%;
-    max-width: 1300px;
-    max-height: 90vh;
-    overflow-y: auto;
-    padding: 30px;
-    position: relative;
-}
-
-.modal-close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: var(--text-light);
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.modal-close:hover {
-    color: var(--primary-color);
-}
-
-.modal-header {
-    margin-bottom: 30px;
-}
-
-.modal-title {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
-
-.modal-tech {
-    display: flex;
-    gap: 10px;
-}
-
-.modal-body {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-.modal-description {
-    display: flex;
-    flex-direction: column;
-}
-
-.modal-description h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: var(--primary-color);
-}
-
-.modal-description p {
-    margin-bottom: 15px;
-}
-
-.modal-description ul {
-    margin-bottom: 20px;
-    padding-left: 20px;
-}
-
-.modal-description li {
-    margin-bottom: 8px;
-}
-
-/* ====================================================================================================================================================
-     ST - MODAL DE HABILIDADES DETALLES
-   ==================================================================================================================================================== */
-
-   /* Estilos para el modal de habilidades */
-.skills-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 1000;
-    overflow-y: auto;
-}
-
-.skills-modal .modal-content {
-    background-color: var(--bg-color);
-    margin: 5% auto;
-    padding: 2rem;
-    border-radius: 10px;
-    max-width: 1500px;
-    width: 90%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    position: relative;
-    color: var(--text-color);
-}
-
-.skills-modal h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: var(--primary-color);
-    font-size: 2rem;
-}
-
-.skills-modal h3 {
-    color: var(--secondary-color);
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-}
-
-.skills-modal ul {
-    list-style-type: none;
-    padding-left: 1rem;
-}
-
-.skills-modal li {
-    margin-bottom: 0.8rem;
-    position: relative;
-    padding-left: 1.5rem;
-}
-
-.skills-modal li:before {
-    content: "•";
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    position: absolute;
-    left: 0;
-    top: -3px;
-}
-
-.skills-modal strong {
-    color: var(--primary-color);
-}
-
-/* ====================================================================================================================================================
-     ST - MODAL DE PROYECTOS
-   ==================================================================================================================================================== */
-
-/* Project Modal */
-.project-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2000;
-    opacity: 0;
-    visibility: hidden;
-    transition: var(--transition);
-}
-
-.project-modal.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Contenedor del carrusel con relación de aspecto flexible */
-
-.modal-images {
-    position: relative;
-    width: 100%;
-    max-height: 70vh; /* Altura máxima */
-    min-height: 300px; /* Altura mínima */
-    overflow: hidden;
-    display: flex;
-    align-items: center; /* Centra verticalmente */
-    justify-content: center; /* Centra horizontalmente */
-    background-color: rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-    border-radius: 8px;
-}
-
-/* Estilo base para todas las imágenes */
-
-.modal-images img {
-    position: absolute;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain; /* relación de aspecto */
-    opacity: 0;
-    transition: opacity 0.5s ease, transform 0.3s ease;
-    display: block;
-    margin: 0 auto; /* Centrado horizontal */
-}
-
-/* Imagen activa */
-.modal-images img.active {
-    opacity: 1;
-    position: relative;
-}
-
-/* Efecto al cambiar imágenes */
-
-.modal-images img.leaving {
-    opacity: 0;
-    transform: scale(0.98);
-}
-
-.modal-images img.entering {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.project-modal.active .modal-content {
-    transform: translateY(0);
-}
-
-/* ====================================================================================================================================================
-     ST - ANIMACIONES GENERALES
+     Animaciones generales
    ==================================================================================================================================================== */
 
 /* Animacion de parpadeo de estrellas para claro-oscuro boton */
@@ -2410,309 +836,196 @@ section {
   }
 }
 
-/* Animación de movimiento del fondo (header)*/
-
-@keyframes rain {
-  from { background-position: 0 0, 0 0; }
-  to   { background-position: 0 5000px, 0 5000px; }
-}
-
-/* Animacion de pulso (header) */
-
-@keyframes pulseRect {
-  0%,100% { transform: scale(1.2);   opacity: 1; }
-  50%     { transform: scale(1.05); opacity: 0.7; }
-}
-
-/* Animaciones del borde de las cartas (cartas de sobre mi)*/
-
-@keyframes borderRotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* Animacion para hero (UP) */
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Animacion para hero (RIGHT) */
-
-@keyframes fadeInRight {
-    from {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Animacion de maquina de escribir */
-
-@keyframes typing {
-    from {
-        width: 0;
-    }
-}
-
-/* Animacion de borde para maquina de escribir */
-
-@keyframes blink {
-    50% {
-        border-color: transparent;
-    }
-}
-
-/* Animacion de scroll para habilidades */
-
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-250px * 8));
-    }
-}
-
-/* Animaciones de fade para el modal de proyectos */
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
 /* ====================================================================================================================================================
-     ST - SCROLL DE LOS MODALES
+   Reponsive Desing
    ==================================================================================================================================================== */
-
-/* scroll interno para el modal de proyectos */
-
-.modal-content::-webkit-scrollbar {
-    width: 6px;
-}
-
-.modal-content::-webkit-scrollbar-thumb {
-    background: rgba(59, 130, 246, 0.5);
-    border-radius: 3px;
-}
-
-.modal-content::-webkit-scrollbar-thumb:hover {
-    background: rgba(59, 130, 246, 0.8);
-}
-
-/* Scroll para modal de habilidades */
-
-/* (Chrome, Edge, Opera) */
-
-.skills-modal::-webkit-scrollbar {
-    width: 6px;
-}
-
-.skills-modal::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.skills-modal::-webkit-scrollbar-thumb {
-    background: rgba(59, 130, 246, 0.5);
-    border-radius: 3px;
-}
-
-.skills-modal::-webkit-scrollbar-thumb:hover {
-    background: rgba(59, 130, 246, 0.8);
-}
-
-/* Scrollbar para Firefox */
-
-.skills-modal {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(59, 130, 246, 0.5) transparent;
-}
-
-/* ====================================================================================================================================================
-   ST - SECCIÓN DE CONTACTO CON WHATSAPP - CORREGIDA
-   ==================================================================================================================================================== */
-
-.contact-section {
-    padding: 1px 0 40px;
-}
-
-.contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-    gap: 60px; /* Reducido de 100px */
-    background-color: var(--card-bg);
-    border-radius: 15px;
-    padding: 40px; /* Reducido de 50px */
-    box-shadow: var(--shadow);
-    max-width: 1200px; /* Agregado */
-    margin: 0 auto; /* Cambiado - centrado */
-    align-items: start; 
-}
-
-.contact-info h3 {
-    font-size: 1.8rem;
-    margin-bottom: 15px; /* Aumentado de 10px */
-    color: var(--primary-color);
-}
-
-.contact-details {
-    margin-top: 30px;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.contact-item i {
-    width: 40px;
-    height: 40px;
-    background-color: rgba(59, 130, 246, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary-color);
-    font-size: 1.2rem;
-}
-
-.contact-item:nth-child(1) i {
-    background-color: rgba(37, 211, 102, 0.1);
-    color: #25D366;
-}
-
-.whatsapp-options h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: var(--primary-color);
-}
-
-.whatsapp-options p {
-    color: var(--text-light);
-    margin-bottom: 20px; /* Reducido de 25px para eliminar espacio extra */
-}
-
-.whatsapp-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 0; /* Cambiado de auto para eliminar espacio extra */
-}
-
-.whatsapp-btn {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 15px 20px;
-    background: linear-gradient(135deg, #25D366, #128C7E);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: left;
-    width: 100%;
-    max-width: 320px; 
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-    box-sizing: border-box; 
-}
-
-.whatsapp-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-    background: linear-gradient(135deg, #128C7E, #25D366);
-}
-
-.whatsapp-btn:active {
-    transform: translateY(1px);
-}
-
-.whatsapp-btn i {
-    font-size: 1.5rem;
-}
-
-.whatsapp-btn.custom-message {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-}
-
-.whatsapp-btn.custom-message:hover {
-    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
-}
-
-/* Responsive */
-.contact-info, .whatsapp-options {
-    display: flex;
-    flex-direction: column;
-    height: auto; /* Cambiado de 100% */
-}
 
 @media (max-width: 1200px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+    }
+    
+    .modal-body {
+        gap: 30px;
+    }
+    
     .contact-container {
-        max-width: 90%; /* Cambiado de márgenes fijos */
-        margin: 0 auto;
+        max-width: 90%;
         gap: 50px;
     }
 }
 
 @media (max-width: 992px) {
+    .hero .container {
+        flex-direction: column;
+    }
+    
+    .hero-content {
+        text-align: center;
+        flex: 1;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
     .contact-container {
         grid-template-columns: 1fr;
         gap: 40px;
         max-width: 95%;
-        margin: 0 auto;
         padding: 35px 30px;
     }
     
     .whatsapp-buttons {
-        align-items: stretch; /* Cambiado de center */
+        align-items: stretch;
     }
     
     .whatsapp-btn {
-        max-width: 100%; /* Ocupa todo el ancho disponible */
+        max-width: 100%;
     }
 }
 
 @media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background-color: var(--bg-color);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        transition: var(--transition);
+    }
+    
+    .nav-links.active {
+        left: 0;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+    
+    .hero-title, .section-title, .animated-title h2 {
+        font-size: 2.5rem;
+    }
+    
+    .animated-title h2 span:nth-child(3) {
+        font-size: 0.25em;
+        letter-spacing: 0.3em;
+    }
+    
+    .animated-border-card {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .btn-ver-proyectos, .btn-cv {
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .modal-content {
+        padding: 25px;
+    }
+    
+    .modal-title {
+        font-size: 1.8rem;
+    }
+    
+    .modal-images {
+        height: 350px;
+    }
+    
+    .modal-project-buttons {
+        flex-direction: column;
+    }
+    
+    .btn-repository {
+        width: 180px;
+    }
+    
+    .filter-btn span {
+        display: none;
+    }
+    
+    .filter-btn {
+        padding: 12px;
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+    }
+    
+    .project-tech span {
+        font-size: 0.7rem;
+        padding: 5px 10px;
+    }
+    
+    .tech-logo-card {
+        width: 12px;
+        height: 12px;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .footer-brand {
+        align-items: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .footer-nav a {
+        justify-content: center;
+    }
+    
     .contact-container {
         padding: 30px 25px;
         gap: 35px;
         max-width: 95%;
-        margin: 0 auto;
     }
     
     .whatsapp-btn {
-        max-width: 100%; 
+        max-width: 100%;
     }
-
+    
     .tech-info {
         opacity: 0 !important;
         pointer-events: none !important;
         transform: translateX(-50%) !important;
     }
-
+    
     .floating-tech-info {
         position: fixed;
         z-index: 9999;
@@ -2728,13 +1041,96 @@ section {
         transition: opacity 0.18s ease, transform 0.18s ease, top 0.18s ease;
         pointer-events: auto;
     }
+    
+    .card {
+        width: 280px;
+        height: 360px;
+    }
+    
+    .heading {
+        font-size: 22px;
+    }
+    
+    .tech-tag.active .tech-info {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-5px);
+        pointer-events: auto;
+    }
+    
+    .main-content {
+        flex: 1;
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: calc(100% - 10px);
+    }
+    
+    .card-footer {
+        flex-shrink: 0;
+        margin-top: auto;
+    }
+    
+    .modal-content {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        max-height: 90vh;
+    }
+    
+    .modal-body {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    .modal-images {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-right: 0 !important;
+        float: none !important;
+    }
+    
+    .modal-description {
+        order: 2;
+        flex: 1;
+    }
+    
+    .modal-project-buttons {
+        order: 3;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: auto;
+        padding-top: 15px;
+        border-top: 1px solid var(--border-color);
+    }
+    
+    .modal-images img {
+        width: 100%;
+        height: auto;
+        max-height: 100%;
+        object-fit: contain;
+    }
 }
 
 @media (max-width: 576px) {
+    section {
+        padding: 60px 0;
+    }
+    
+    .hero {
+        padding: 120px 0 80px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
     .contact-container {
         padding: 25px 20px;
         max-width: 95%;
-        margin: 0 auto;
         gap: 30px;
     }
     
@@ -2750,58 +1146,45 @@ section {
     .whatsapp-options h3 {
         font-size: 1.3rem;
     }
-}
-
-.filter-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
-}
-
-.filter-btn {
-    padding: 10px 25px;
-    border: 2px solid var(--primary-color);
-    background: transparent;
-    color: var(--primary-color);
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.filter-btn:hover {
-    background: var(--primary-color);
-    color: var(--bg-primary);
-    transform: translateY(-2px);
-}
-
-.filter-btn.active {
-    background: var(--primary-color);
-    color: var(--bg-primary);
-    box-shadow: 0 5px 15px rgba(100, 100, 255, 0.3);
-}
-
-/* Badge para el tipo de proyecto */
-.tech-badge {
-    display: inline-block;
-    padding: 6px 12px;
-    background: rgba(100, 100, 255, 0.15);
-    color: var(--primary-color);
-    border-radius: 15px;
-    font-size: 0.85rem;
-    font-weight: 600;
-}
-
-@media (max-width: 768px) {
-    .filter-buttons {
-        gap: 10px;
+    
+    .typing {
+        width: 100%;
+        max-width: 24ch;
+        margin: 0 auto;
+        text-align: center;
     }
+}
 
-    .filter-btn {
-        padding: 8px 18px;
-        font-size: 0.9rem;
+@media (max-width: 480px) {
+    .animated-title h2 {
+        font-size: 2em;
+    }
+    
+    .btn-ver-proyectos, .btn-cv {
+        font-size: 0.9em;
+        padding: 12px 20px;
+        height: 46px;
+    }
+    
+    .project-image {
+        height: 200px;
+    }
+    
+    .modal-images {
+        height: 280px;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .project-tech {
+        gap: 6px;
+    }
+    
+    .project-tech span {
+        font-size: 0.65rem;
+        padding: 4px 8px;
     }
 }
