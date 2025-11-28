@@ -7,7 +7,7 @@
     padding: 80px 0;
 }
 
-/* Botones de filtro mejorados */
+/* Botones de filtro */
 .filter-buttons {
     display: flex;
     justify-content: center;
@@ -62,7 +62,7 @@
     font-size: 1.1rem;
 }
 
-/* Grid de proyectos mejorado */
+/* Grid de proyectos */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -70,7 +70,7 @@
     padding: 20px 0;
 }
 
-/* Tarjeta de proyecto rediseñada */
+/* Tarjeta de proyecto */
 .project-card {
     background: linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
                 linear-gradient(145deg, transparent 35%, var(--primary-color), var(--secondary-color)) border-box;
@@ -108,7 +108,7 @@
     box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
 }
 
-/* Imagen del proyecto con efecto especial */
+/* Imagen del proyecto */
 .project-image {
     height: 250px;
     overflow: hidden;
@@ -190,7 +190,7 @@
     Etiquetas de tecnologias
    ==================================================================================================================================================== */
 
-/* Contenedor de etiquetas ordenado y bonito */
+/* Contenedor de etiquetas */
 .project-tech {
     display: flex;
     flex-wrap: wrap;
@@ -200,7 +200,7 @@
     align-items: center;
 }
 
-/* Estilo de etiquetas mejorado - como etiquetas reales */
+/* Estilo de etiquetas */
 .project-tech span {
     display: inline-flex;
     align-items: center;
@@ -482,7 +482,7 @@
     transform: scale(1) translateY(0);
 }
 
-/* Botón cerrar mejorado */
+/* Botón cerrar */
 .modal-close {
     position: absolute;
     top: 20px;
@@ -539,14 +539,14 @@
     text-transform: uppercase;
 }
 
-/* Layout modal - CARRUSEL ARRIBA, INFORMACIÓN ABAJO */
+/* Layout modal */
 .modal-body {
     display: flex;
     flex-direction: column;
     gap: 40px;
 }
 
-/* Sección del carrusel - SIN FONDO DIFERENTE */
+/* Sección del carrusel */
 .modal-images-section {
     position: relative;
     width: 100%;
@@ -622,26 +622,25 @@
 }
 
 .indicator {
-    width: 10px;
-    height: 10px;
-    background: var(--border-color);
-    border-radius: 50%;
-    cursor: pointer;
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid transparent;
     transition: all 0.3s ease;
 }
 
 .indicator.active {
-    width: 30px;
-    border-radius: 5px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 15px var(--primary-color);
 }
 
 .indicator:hover {
-    background: var(--primary-color);
-    transform: scale(1.2);
+    transform: scale(1.3);
+    background: var(--secondary-color);
 }
 
-/* Descripción del modal - DEBAJO DEL CARRUSEL */
+/* Descripción del modal */
 .modal-description {
     display: flex;
     flex-direction: column;
@@ -649,17 +648,43 @@
     order: 2;
 }
 
+.modal-section {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.modal-section:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
 .modal-section h3 {
-    font-size: 1.3rem;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.modal-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
 }
 
 .modal-section h3 i {
-    font-size: 1.1rem;
+    color: var(--primary-color);
+    width: 20px;
+    text-align: center;
 }
 
 .description-text {
@@ -701,7 +726,7 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-/* Tags de tecnologías en el modal con logos a color */
+/* Tags de tecnologías */
 .tech-tags-modal {
     display: flex;
     flex-wrap: wrap;
@@ -725,7 +750,7 @@
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Botones del modal mejorados */
+/* Botones del modal */
 .modal-project-buttons {
     display: flex;
     gap: 15px;

@@ -952,7 +952,8 @@ section {
     }
     
     .modal-content {
-        padding: 25px;
+        padding: 30px 20px;
+        max-height: 95vh;
     }
     
     .modal-title {
@@ -961,6 +962,10 @@ section {
     
     .modal-images {
         height: 350px;
+    }
+    
+    .modal-images-section {
+        padding: 20px;
     }
     
     .modal-project-buttons {
